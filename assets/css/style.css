@@ -226,6 +226,18 @@ li {
   text-decoration: underline;
 }
 
+.heading {
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.section-para {
+  margin-bottom: 28px;
+  color: var(--p-color);
+  font-size: 14px;
+  line-height: 22px;
+}
+
 /* root elements  */
 :root {
   --white-color: #fff;
@@ -413,18 +425,88 @@ li {
   float: left;
   font-size: 60px;
 }
-
-
 /*=================================
   highlight section styling ends here
 =================================*/
+/*=================================
+  story section styling starts here
+=================================*/
+.story {
+  padding: 108px 0;
+}
 
+.story .heading {
+  margin-bottom: 35px;
+}
 
+.left-heading {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
 
+.avatar-list {
+  display: flex;
+  margin-right: 5%;
+}
 
+.avatar-img {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--white-color);
+  border-radius: 50%;
+}
 
+.story-box {
+  align-items: initial;
+}
 
+.left-story {
+  padding-right: 2%;
+}
 
+.meet-btn,
+.schedule-btn {
+  padding: 10px 17px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.meet-btn {
+  border: 2px solid var(--primary-color);
+  margin-right: 1.8%;
+}
+
+.schedule-btn {
+  padding: 12px 15px;
+  background-color: var(--navbar-bg-color);
+  color: var(--white-color);
+}
+
+.bold-para {
+  margin-bottom: 48px;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 33px;
+}
+
+.bottom-para {
+  font-size: 14px;
+}
+
+.right-bottom-story {
+  padding: 48px 0;
+  border-top: 1px solid var(--p-color);
+  justify-content: initial;
+}
+
+.avatar-list figure {
+  width: 36px;
+}
+/*=================================
+  story section styling ends here
+=================================*/
 
 /*=================================
   main styling ends here
