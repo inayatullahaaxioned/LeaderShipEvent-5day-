@@ -121,9 +121,15 @@ li {
   justify-content: space-between;
 }
 
+.underline {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
 /* root elements  */
 :root {
-  --white-color: #ffffff;
+  --white-color: #fff;
+  --black-color: #000;
   --primary-color: #0dcaf0;
   --secondary-color: #0d6efd;
   --section-bg-color: #f0f8ff;
@@ -188,9 +194,89 @@ li {
 /*=================================
   Header styling ends here
 =================================*/  
-
 /*=================================
   main styling starts here
+=================================*/
+/*=================================
+  hero section styling starts here
+=================================*/
+.hero-section {
+  /* position: relative; */
+}
+
+.hero-video {
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  opacity: .8;
+  object-fit: cover;
+}
+
+
+.hero-section .wrapper {
+  position: relative;
+}
+
+.hero-content {
+  padding: 202px 0 215px;
+  flex-direction: column;
+}
+
+.hero-heading,
+.year {
+  color: var(--white-color);
+  font-size: 48px;
+  font-weight: 900;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.year {
+  margin-bottom: 30px;
+}
+
+.time-venue span {
+  padding: 11px 16px;
+  display: inline-block;
+  border: 1px solid var(--white-color);
+  color: var(--white-color);
+  font-size: 15px;
+}
+
+.next-section-btn {
+  display: inline-block;
+  text-indent: -9999px;
+  margin-left: 1.5%;
+}
+
+.next-section-btn::before {
+  content: "\f063";
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white-color);
+  color: var(--black-color);
+  font-family: "FontAwesome";
+  float: left;
+  text-indent: 0;
+}
+
+.time-venue {
+  margin-bottom: 40px;
+}
+/*=================================
+  hero section styling ends here
+=================================*/
+/*=================================
+  highlight section styling starts here
+=================================*/
+
+/*=================================
+  highlight section styling ends here
 =================================*/
 
 
