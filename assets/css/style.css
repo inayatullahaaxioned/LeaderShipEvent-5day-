@@ -9,13 +9,87 @@
    v2.0 | 20110126
    License: none (public domain)
    ========================================================================== */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
-blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
-ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
-dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
-tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
-figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -25,17 +99,30 @@ time, mark, audio, video {
 }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block;
 }
 
 /* Force scrollbar */
-html { overflow-y: scroll; }
+html {
+  overflow-y: scroll;
+}
 
 /* Align radios and text inputs with their label */
 
-input[type='radio'] { vertical-align: text-bottom; }
+input[type='radio'] {
+  vertical-align: text-bottom;
+}
 
 /* Hand cursor on clickable input elements */
 label,
@@ -51,7 +138,9 @@ strong {
   font-size: inherit;
 }
 
-em { font-style: italic; }
+em {
+  font-style: italic;
+}
 
 img {
   width: 100%;
@@ -67,8 +156,13 @@ sup {
   line-height: 0;
 }
 
-sup { top: -.7em; }
-sub { bottom: -.25em; }
+sup {
+  top: -.7em;
+}
+
+sub {
+  bottom: -.25em;
+}
 
 /* 1.2. Clear Fix
    ========================== */
@@ -79,8 +173,13 @@ sub { bottom: -.25em; }
   content: " ";
 }
 
-.cf:after { clear: both; }
-.cf { *zoom: 1; }
+.cf:after {
+  clear: both;
+}
+
+.cf {
+  *zoom: 1;
+}
 
 /*for all*/
 body {
@@ -88,9 +187,9 @@ body {
   font-family: sans-serif;
 }
 
-a { 
+a {
   display: inline-block;
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 li {
@@ -101,9 +200,10 @@ li {
 /*for wrapper*/
 .wrapper {
   max-width: 1360px;
-  width: 79.31%; 
+  width: 79.31%;
   margin: 0 auto;
 }
+
 /* css reset  */
 *,
 *::before,
@@ -138,6 +238,7 @@ li {
   --p-color: #717275;
   --highlight-icon-color: #ff0100;
 }
+
 /*=================================
   Header styling starts here
 =================================*/
@@ -191,19 +292,16 @@ li {
   border-radius: 25px;
   font-weight: 700;
 }
+
 /*=================================
   Header styling ends here
-=================================*/  
+=================================*/
 /*=================================
   main styling starts here
 =================================*/
 /*=================================
   hero section styling starts here
 =================================*/
-.hero-section {
-  /* position: relative; */
-}
-
 .hero-video {
   width: 100%;
   position: absolute;
@@ -268,12 +366,54 @@ li {
 .time-venue {
   margin-bottom: 40px;
 }
+
 /*=================================
   hero section styling ends here
 =================================*/
 /*=================================
   highlight section styling starts here
 =================================*/
+.highlight-section {
+  padding: 32px 0;
+  background-color: var(--navbar-bg-color);
+}
+
+.highlight-item img {
+  max-width: 344px;
+  max-height: 228px;
+}
+
+.highlight-item {
+  position: relative;
+}
+
+.highlight-item figcaption {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  color: var(--white-color);
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.highlight-item::before {
+  content: "\f167";
+  position: absolute;
+  display: none;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--highlight-icon-color);
+  font-family: "FontAwesome";
+  float: left;
+  font-size: 60px;
+}
+
 
 /*=================================
   highlight section styling ends here
@@ -292,7 +432,7 @@ li {
 
 /*=================================
   footer styling starts here
-=================================*/ 
+=================================*/
 
 
 
@@ -300,14 +440,10 @@ li {
 
 
 
- /*=================================
+/*=================================
   footer styling ends here
-=================================*/ 
+=================================*/
 
 /*media query starts*/
 /*media query for 995px starts here*/
-@media only screen and (max-width: 995px) {
-
-
-
-}  
+@media only screen and (max-width: 995px) {}
