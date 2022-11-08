@@ -245,7 +245,6 @@ li {
   --primary-color: #0dcaf0;
   --secondary-color: #0d6efd;
   --section-bg-color: #f0f8ff;
-  --dark-color: #000000;
   --navbar-bg-color: #273053;
   --p-color: #717275;
   --highlight-icon-color: #ff0100;
@@ -425,6 +424,7 @@ li {
   float: left;
   font-size: 60px;
 }
+
 /*=================================
   highlight section styling ends here
 =================================*/
@@ -504,8 +504,140 @@ li {
 .avatar-list figure {
   width: 36px;
 }
+
 /*=================================
   story section styling ends here
+=================================*/
+/*=================================
+  speakers section styling starts here
+=================================*/
+.speakers {
+  padding: 100px 0;
+  background-color: var(--section-bg-color);
+}
+
+.speaker-content {
+  padding: 0 8.5%;
+  flex-basis: 70%;
+}
+
+.speaker-content .heading {
+  margin-bottom: 23px;
+}
+
+.ceo-image,
+.ceo-image figure {
+  position: relative;
+}
+
+.featured {
+  padding: 5px;
+  border-radius: 4px;
+  position: absolute;
+  top: 8px;
+  right: 1.5%;
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.speaker-info {
+  padding: 15px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.ceo-info-group {
+    width: 100%;
+      padding: 12px 5%;
+      background-color: var(--white-color);
+      position: relative;
+}
+
+.ceo-name {
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.ceo-designation {
+  color: var(--p-color);
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.team-social {
+  position: absolute;
+  right: 0;
+}
+
+.speaker-name {
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.designation {
+  color: var(--p-color);
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.info-group {
+  width: 100%;
+  padding: 8px 5%;
+  background-color: var(--white-color);
+  position: relative;
+}
+
+.ceo-info-group::before,
+.info-group::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: var(--primary-color);
+  width: 5px;
+  height: 100%;
+  transition: all 1s;
+}
+
+.speaker-list li {
+  margin-top: 20px;
+  position: relative;
+  flex-basis: 23.5%;
+}
+
+.social-ceo,
+.social-team {
+  display: inline-block;
+  text-indent: -9999px;
+}
+
+.social-ceo::before,
+.social-team::before {
+  content: "\f16d";
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--white-color);
+  color: var(--black-color);
+  font-size: 20px;
+  font-family: "FontAwesome";
+  float: left;
+  text-indent: 0;
+}
+
+.whatsapp::before { content: "\f232"; }
+.facebook::before { content: "\f09a"; }
+.google::before { content: "\f1a0"; }
+.team-social { display: none; }
+/*=================================
+  speakers section styling ends here
 =================================*/
 
 /*=================================
