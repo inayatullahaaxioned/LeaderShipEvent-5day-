@@ -813,6 +813,50 @@ li {
 =================================*/
 
 /*=================================
+  ticket section styling starts here
+=================================*/
+.ticket {
+  padding: 50px 0 100px;
+}
+
+.ticket .heading{
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.name-price {
+  padding: 20px 32px;
+  background-color: var(--navbar-bg-color);
+  color: var(--white-color);
+  font-weight: 700;
+}
+
+.name {
+  font-size: 28px;
+}
+
+.price {
+  font-size: 20px;
+}
+
+.ticket-item {
+  border-radius: 20px;
+  overflow: hidden;
+  flex-basis: 32%;
+}
+
+.ticket-feature {
+  padding: 45px;
+}
+
+.ticket-info {
+  padding: 10px 0;
+  color: var(--p-color);
+}
+/*=================================
+  ticket section styling ends here
+=================================*/
+/*=================================
   main styling ends here
 =================================*/
 
