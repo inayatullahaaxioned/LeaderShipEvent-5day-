@@ -1,4 +1,5 @@
 @charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
 /* ==========================================================================
    1. CSS Reset Code
    ========================================================================== */
@@ -100,18 +101,90 @@ li {
 /*for wrapper*/
 .wrapper {
   max-width: 1360px;
-  width: 86%; 
+  width: 79.31%; 
   margin: 0 auto;
+}
+/* css reset  */
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Work Sans', sans-serif;
+}
+
+/* common styling  */
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* root elements  */
+:root {
+  --white-color: #ffffff;
+  --primary-color: #0dcaf0;
+  --secondary-color: #0d6efd;
+  --section-bg-color: #f0f8ff;
+  --dark-color: #000000;
+  --navbar-bg-color: #273053;
+  --p-color: #717275;
+  --highlight-icon-color: #ff0100;
 }
 /*=================================
   Header styling starts here
 =================================*/
+.header {
+  padding: 16px 0;
+  background-color: var(--navbar-bg-color);
+}
 
+.header .wrapper {
+  margin-left: 12.5%;
+}
 
+.logo {
+  display: inline-block;
+  color: var(--primary-color);
+  font-weight: 600;
+  text-transform: uppercase;
+}
 
+.brand-logo {
+  flex-basis: 15%;
+}
 
+.logo::before {
+  content: "\f140";
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+  font-size: 32px;
+  font-family: "FontAwesome";
+  float: left;
+}
 
+.nav-item {
+  color: var(--white-color);
+  font-size: 13px;
+  font-weight: 600;
+}
 
+.nav-item.active {
+  color: var(--primary-color);
+}
+
+.nav {
+  flex-basis: 62.5%;
+}
+
+.custom-btn {
+  padding: 12px 18px;
+  background-color: var(--secondary-color);
+  border-radius: 25px;
+  font-weight: 700;
+}
 /*=================================
   Header styling ends here
 =================================*/  
