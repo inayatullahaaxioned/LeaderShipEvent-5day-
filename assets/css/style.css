@@ -639,6 +639,123 @@ li {
 /*=================================
   speakers section styling ends here
 =================================*/
+/*=================================
+  schedules section styling starts here
+=================================*/
+.schedule {
+  padding: 20px ;
+}
+.schedule .heading {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.schedule-date {
+  padding: 22px;
+  flex-basis: 25%;
+  box-shadow: 0 16px 48px rgb(0 0 0 / 18%);
+}
+
+.schedule-date.active {
+  border-left: 3px solid var(--primary-color);
+}
+.schedule-date.active .day{
+  color: var(--primary-color);
+}
+
+.day {
+  display: block;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.date {
+  color: var(--p-color);
+}
+
+/* .schedule-list{
+  position: relative;
+} */
+
+.schedule-list .meet-img{
+  margin-right: 2.5%;
+  flex-basis: 59.5%;
+}
+
+.schedule-list img{
+  border-radius: 20px;
+}
+
+.schedule-list li {
+  padding: 45px 0;
+  align-items: inherit;
+}
+
+.meet-title {
+  margin-bottom: 8px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.clock,
+.sidebar {
+  display: block;
+}
+
+.clock::before,
+.sidebar::before {
+  content: "\f017";
+  margin-right: 10px;
+  font-family: "FontAwesome";
+  float: left;
+}
+
+.sidebar::before { content: "\e24e"; }
+
+.clock {
+  margin: 0 4%;
+}
+
+.sidebar {
+  margin: 0 4%;
+}
+
+.info-item img {
+  width: 45px;
+  height: 45px;
+  margin-right: 15px;
+  border-radius: 50%;
+}
+
+.meet-info .info-item {
+  padding: 0;
+  justify-content: initial;
+}
+
+.schedule-list {
+  display: none;
+}
+
+.schedule-list.active{
+  display: block;
+}
+
+.name-post {
+  display: flex;
+  flex-direction: column;
+}
+
+.meet-info {
+  justify-content: flex-start;
+}
+
+.post {
+  font-size: 13px;
+  text-transform: uppercase;
+}
+/*=================================
+  schedule section styling ends here
+=================================*/
 
 /*=================================
   main styling ends here
