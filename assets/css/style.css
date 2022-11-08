@@ -756,6 +756,61 @@ li {
 /*=================================
   schedule section styling ends here
 =================================*/
+/*=================================
+  become speaker section styling starts here
+=================================*/
+.become-speaker {
+  padding: 105px 0;
+  position: relative;
+}
+
+.become-speaker .heading,
+.become-para {
+  color: var(--white-color);
+  font-weight: 600;
+}
+
+.become-para {
+  font-size: 15px;
+  line-height: 23px;
+}
+
+.become-speaker .heading {
+  margin-bottom: 30px;
+}
+
+.become-bg {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.become-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.become-content {
+  flex-basis: 56%;
+}
+
+.register-btn {
+  padding: 10px 15px;
+  border-radius: 20px;
+  position: relative;
+  right: 126px;
+  background-color: var(--white-color);
+  color: var(--black-color);
+  font-size: 14px;
+  font-weight: 600;
+}
+/*=================================
+  become speaker section styling ends here
+=================================*/
 
 /*=================================
   main styling ends here
