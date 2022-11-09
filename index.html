@@ -534,39 +534,39 @@
           <ul class="ticket-list flex">
             <li class="ticket-item">
               <div class="name-price flex">
-                <h4 class="name">Early Bird</h4>
+                <h4 class="ticket-name">Early Bird</h4>
                 <span class="price">$640</span>
               </div>
               <div class="ticket-feature">
-                <p class="ticket-info">All-Day Coffee + Snacks</p>
-                <p class="ticket-info">After Party</p>
-                <p class="ticket-info">24/7 Support</p>
+                <p class="ticket-info ticket-icon cup">All-Day Coffee + Snacks</p>
+                <p class="ticket-info ticket-icon controller">After Party</p>
+                <p class="ticket-info ticket-icon chat">24/7 Support</p>
                 <p class="ticket-info top-border">Quick group meetings for multiple teams</p>
                 <a href="#FIXME" class="buy-btn" title="Buy Tickets">Buy Tickets</a>
               </div>
             </li>
             <li class="ticket-item">
               <div class="name-price flex">
-                <h4 class="name">Gold</h4>
+                <h4 class="ticket-name">Gold</h4>
                 <span class="price">$840</span>
               </div>
               <div class="ticket-feature">
-                <p class="ticket-info">All-Day Coffee + Snacks</p>
-                <p class="ticket-info">After Party</p>
-                <p class="ticket-info">24/7 Support</p>
+                <p class="ticket-info ticket-icon cup">All-Day Coffee + Snacks</p>
+                <p class="ticket-info ticket-icon controller">After Party</p>
+                <p class="ticket-info ticket-icon chat">24/7 Support</p>
                 <p class="ticket-info top-border">Quick group meetings for multiple teams</p>
                 <a href="#FIXME" class="buy-btn" title="Buy Tickets">Buy Tickets</a>
               </div>
             </li>
             <li class="ticket-item">
               <div class="name-price flex">
-                <h4 class="name">Platinum</h4>
+                <h4 class="ticket-name">Platinum</h4>
                 <span class="price">$1240</span>
               </div>
               <div class="ticket-feature">
-                <p class="ticket-info">Cashback $200</p>
-                <p class="ticket-info">Private Meetings + After Party</p>
-                <p class="ticket-info">24/7 Support + Instant Chats</p>
+                <p class="ticket-info ticket-icon cup cash">Cashback $200</p>
+                <p class="ticket-info ticket-icon controller">Private Meetings + After Party</p>
+                <p class="ticket-info ticket-icon chat">24/7 Support + Instant Chats</p>
                 <p class="ticket-info top-border">group talks and private chats for multiple teams</p>
                 <a href="#FIXME" class="buy-btn" title="Buy Tickets">Buy Tickets</a>
               </div>
@@ -582,13 +582,15 @@
           <div class="venue-content flex">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1839486564413!2d-73.98773128504071!3d40.7579787427391!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sin!4v1667827339947!5m2!1sen!2sin"
-              width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+              width="515" height="310" style="border:0;" allowfullscreen="" loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"></iframe>
             <div class="venue-detail">
               <h4 class="venue-heading">Times Square</h4>
-              <address class="address icon">102 South. 7th Street, New York, NY 10036, USA</address>
-              <a href="mailto:hi@company.com" class="icon envelope" title="hi@company.com">hi@company.com</a>
-              <a href="tel:0100200340" class="icon phone" title="010-020-0340">010-020-0340</a>
+              <div class="venue-box">
+                <address class="address icon">102 South. 7th Street, New York, NY 10036, USA</address>
+                <a href="mailto:hi@company.com" class="icon envelope" title="hi@company.com">hi@company.com</a>
+                <a href="tel:0100200340" class="icon phone" title="010-020-0340">010-020-0340</a>
+              </div>
             </div>
           </div>
         </div>
@@ -596,27 +598,26 @@
       <!-- venue section ends  -->
       <!-- contact section starts  -->
       <section class="contact">
-        <figure class="contact-background">
-          <img src="assets/images/maria-stewart-p4tj0g-_aMM-unsplash.jpg" alt="Contact background image">
-        </figure>
         <div class="wrapper">
           <form action="#FIXME" class="contact-form" method="post">
             <h3 class="heading">Please Say Hi</h3>
-            <div class="input-row">
-              <div class="input">
-                <input class="name" type="text" name="Name" id="name" placeholder="Name">
+            <div class="input-box">
+              <div class="input-row flex">
+                <div class="input">
+                  <input class="name" type="text" name="Name" id="name" placeholder="Name">
+                </div>
+                <div class="input">
+                  <input class="email" type="text" name="Email" id="email" placeholder="Email">
+                </div>
+                <div class="input">
+                  <input class="subject" type="text" name="Subject" id="subject" placeholder="Subject">
+                </div>
               </div>
-              <div class="input">
-                <input class="email" type="text" name="Email" id="email" placeholder="Email">
+              <div class="input-row">
+                <textarea name="message" id="message" rows="8" class="message" placeholder="Message"></textarea>
               </div>
-              <div class="input">
-                <input class="subject" type="text" name="Subject" id="subject" placeholder="Subject">
-              </div>
+              <input class="submit-btn" type="submit" value="Submit">
             </div>
-            <div class="input-row">
-              <textarea name="message" id="message" rows="8" class="message"></textarea>
-            </div>
-            <input class="submit-btn" type="submit" value="Submit">
           </form>
         </div>
       </section>
@@ -627,11 +628,11 @@
     <!--footer section start-->
     <footer class="footer">
       <div class="wrapper">
-        <div class="upper-footer">
+        <div class="upper-footer flex">
           <h6 class="footer-logo flex">
             <a href="#FIXME" class="logo" title="Leadership Event">Leadership Event</a>
           </h6>
-          <ul class="social-list">
+          <ul class="social-list flex">
             <li>
               <a href="#FIXME" class="social-icon facebook" title="Facebook" target="_blank"
                 rel="noopener noreferrer">Facebook</a>
@@ -651,7 +652,7 @@
           </ul>
         </div>
         <div class="lower-footer flex">
-          <ul class="footer-menu">
+          <ul class="footer-menu flex">
             <li>
               <a href="#FIXME" class="footer-menu-item" title="Our Story">Our Story</a>
             </li>
