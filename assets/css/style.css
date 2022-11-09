@@ -309,11 +309,14 @@ li {
   height: 3px;
   margin: 5px;
   display: block;
-  background-color: var(--black-color);
+  background-color: var(--white-color);
   text-indent: -9999px;
 }
 
-.hamburger { display: none; }
+.hamburger {
+  display: none;
+}
+
 /*=================================
   Header styling ends here
 =================================*/
@@ -715,7 +718,7 @@ li {
   color: var(--p-color);
 }
 
-.meet-item:nth-child(2n){
+.meet-item:nth-child(2n) {
   position: relative;
   border-top: 1px solid #dee2e6;
 }
@@ -1313,6 +1316,7 @@ media query for hover effect in desktop starts here
     transition: all 3s;
   }
 }
+
 /*=================================
 media query for hover effect in desktop starts here
 =================================*/
@@ -1320,6 +1324,7 @@ media query for hover effect in desktop starts here
 media query for 1024px starts here
 =================================*/
 @media only screen and (max-width:1024px) {
+
   .brand-logo,
   .footer-logo {
     flex-basis: 20%;
@@ -1337,13 +1342,71 @@ media query for 1024px starts here
   .name-post .post { font-size: 10px; }
   .become-content { flex-basis: 65%; }
   .ticket-info { font-size: 11px; }
-  .address {font-size: 18px; }
+  .address { font-size: 18px; }
   .venue-heading { font-size: 35px; }
-  .venue-box .address::before { height: 40px; }
-  .contact-form { width: 75%; }
+  .venue-box .address::before { height: auto; }
+  .contact-form { width: 85%; }
   .input-row { flex-wrap: wrap; }
-  .input { width: 100%; }
+  .input-row .input:nth-child(3) { flex-basis: 100%; }
+  .input { flex-basis: 46%; }
 }
+
 /*=================================
 media query for 1024px starts here
+=================================*/
+/*=================================
+media query for 995px starts here
+=================================*/
+@media only screen and (max-width:995px) {
+  .wrapper { width: 82%; }
+  .hamburger.active .bar-two { display: none; }
+  .hamburger.active .bar-one { transform: translateY(5px) rotate(45deg); }
+  .hamburger.active .bar-three { transform: translateY(-3px) rotate(-45deg); }
+
+  .hamburger {
+    display: block;
+    z-index: 2;
+    transition: all .5s;
+  }
+
+  .flex { flex-wrap: wrap; }
+  .highlight-item { flex-basis: 46%; }
+  .day { font-size: 22px; }
+  .meet-item { flex-wrap: nowrap; }
+  .schedule-list .meet-img { flex-basis: 100%; }
+
+  .highlight-list,
+  .meet-info,
+  .story-box {
+    gap: 25px;
+  }
+
+  .meet-info .info-item { flex-basis: 45%; }
+
+  .venue-content {
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .venue-detail { flex-basis: 80%; }
+
+  .top-btn {
+    position: fixed;
+    right: 1%;
+    bottom: 25px;
+  }
+
+  .speaker-list li { flex-basis: 46%; }
+  .schedule-date { flex-basis: 50%; }
+  .ticket-list { gap: 30px; }
+  .ticket-item { flex-basis: 46%; }
+
+  .story,
+  .speakers,
+  .venue {
+    padding: 40px 0;
+  }
+}
+/*=================================
+media query for 995px starts here
 =================================*/
