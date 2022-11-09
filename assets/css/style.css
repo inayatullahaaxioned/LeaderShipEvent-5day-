@@ -1059,17 +1059,78 @@ textarea::placeholder {
 /*=================================
   main styling ends here
 =================================*/
-
 /*=================================
   footer styling starts here
 =================================*/
+.upper-footer {
+  padding: 35px 0 50px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.footer-logo { flex-basis: 16%; }
+.social-list { gap: 30px; }
+
+.social-icon {
+  display: inline-block;
+  text-indent: -9999px;
+}
+
+.social-icon::before {
+  content: "\f09a";
+  font-family: "FontAwesome";
+  float: left;
+  text-indent: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--black-color);
+  font-size: 20px;
+}
+
+.instagram::before { content: "\f16d"; }
+.whatsapp::before { content: "\f232"; }
+.youtube::before { content: "\f167"; }
+
+.lower-footer {
+  padding: 28px 0;
+  color: var(--p-color);
+  font-size: 13px;
+}
+
+.lower-footer a { color: var(--p-color); }
+.footer-menu { gap: 16px; }
+.copyright p { line-height: 26px; }
+.copyright-div { flex-basis: 37.5%; }
 
 
+.top-btn {
+  margin-right: 2%;
+  display: inline-block;
+  text-indent: -9999px;
+}
 
+.top-btn::before {
+  content: "\f062";
+  width: 40px;
+  height: 40px;
+  display: flex;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--section-bg-color);
+  color: var(--black-color);
+  font-size: 20px;
+  font-family: "FontAwesome";
+  float: left;
+  text-indent: 0;
+}
 
+.design {
+  margin-top: 20px;
+  display: inline-block;
+}
 
-
-
+.footer-logo .logo { font-size: 15px; }
 /*=================================
   footer styling ends here
 =================================*/
