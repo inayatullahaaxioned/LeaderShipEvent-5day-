@@ -708,9 +708,14 @@ li {
   margin-right: 10px;
   font-family: "FontAwesome";
   float: left;
+  font-family: "Font Awesome 5 Free";
+    font-style: normal;
+    font-variant-caps: normal;
+    font-variant-ligatures: normal;
+    font-weight: 900;
 }
 
-.sidebar::before { content: "\e24e"; }
+.sidebar::before { content: "\e24f"; }
 
 .clock {
   margin: 0 4%;
@@ -825,13 +830,13 @@ li {
 }
 
 .name-price {
-  padding: 20px 32px;
+  padding: 16px 30px;
   background-color: var(--navbar-bg-color);
   color: var(--white-color);
   font-weight: 700;
 }
 
-.name {
+.ticket-name {
   font-size: 28px;
 }
 
@@ -843,15 +848,51 @@ li {
   border-radius: 20px;
   overflow: hidden;
   flex-basis: 32%;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, .175);
 }
 
 .ticket-feature {
-  padding: 45px;
+  padding: 25px 30px;
 }
 
 .ticket-info {
   padding: 10px 0;
   color: var(--p-color);
+}
+
+.ticket-icon::before {
+  content: "\f7b6";
+  margin-right: 12px;
+  font-family: "FontAwesome";
+  float: left;
+}
+
+.controller::before {
+  content: "\f11b";
+  width: 16px;
+}
+
+.chat::before {
+  content: "\f27a";
+}
+
+.chat {
+  margin-bottom: 23px;
+}
+
+.top-border {
+  padding: 30px 0;
+  border-top: 1px solid #dee2e6;
+}
+
+.buy-btn {
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-radius: 100px;
+  background-color: var(--navbar-bg-color);
+  color: var(--white-color);
+  font-size: 14px;
+  font-weight: 600;
 }
 /*=================================
   ticket section styling ends here
