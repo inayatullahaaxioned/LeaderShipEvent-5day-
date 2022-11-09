@@ -898,6 +898,78 @@ li {
   ticket section styling ends here
 =================================*/
 /*=================================
+  venue section styling start here
+=================================*/
+.venue {
+  padding: 105px 0;
+  background-color: var(--section-bg-color);
+}
+
+.venue .heading {
+  margin-bottom: 50px;
+}
+
+iframe {
+  margin-right: 20px;
+}
+
+.venue-content {
+  justify-content: initial;
+}
+
+.venue-detail {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, .175);
+  flex-basis: 49%;
+}
+
+.venue-heading {
+  padding: 22px 28px;
+  background-color: var(--navbar-bg-color);
+  color: var(--white-color);
+  font-size: 40px;
+  font-weight: 900;
+}
+
+.venue-box {
+  padding: 35px 32px;
+}
+.venue-box .icon {
+  display: block;
+}
+
+.venue-box .icon::before {
+  content: "\f3c5";
+  margin-right: 10px;
+  font-family: "FontAwesome";
+  float: left;
+}
+.venue-box .address::before {
+  height: 65px;
+}
+
+.address {
+  margin-bottom: 17px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.venue-box .envelope::before { content: "\f0e0"; }
+.venue-box .phone::before { content: "\f095"; }
+
+.envelope,
+.phone {
+  display: block;
+  color: var(--p-color);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 38px;
+}
+/*=================================
+  venue section styling ends here
+=================================*/
+/*=================================
   main styling ends here
 =================================*/
 
