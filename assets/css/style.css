@@ -550,10 +550,10 @@ li {
 }
 
 .ceo-info-group {
-    width: 100%;
-      padding: 12px 5%;
-      background-color: var(--white-color);
-      position: relative;
+  width: 100%;
+  padding: 12px 5%;
+  background-color: var(--white-color);
+  position: relative;
 }
 
 .ceo-name {
@@ -632,10 +632,22 @@ li {
   text-indent: 0;
 }
 
-.whatsapp::before { content: "\f232"; }
-.facebook::before { content: "\f09a"; }
-.google::before { content: "\f1a0"; }
-.team-social { display: none; }
+.whatsapp::before {
+  content: "\f232";
+}
+
+.facebook::before {
+  content: "\f09a";
+}
+
+.google::before {
+  content: "\f1a0";
+}
+
+.team-social {
+  display: none;
+}
+
 /*=================================
   speakers section styling ends here
 =================================*/
@@ -643,8 +655,9 @@ li {
   schedules section styling starts here
 =================================*/
 .schedule {
-  padding: 20px ;
+  padding: 20px;
 }
+
 .schedule .heading {
   text-align: center;
   margin-bottom: 50px;
@@ -659,7 +672,8 @@ li {
 .schedule-date.active {
   border-left: 3px solid var(--primary-color);
 }
-.schedule-date.active .day{
+
+.schedule-date.active .day {
   color: var(--primary-color);
 }
 
@@ -677,12 +691,12 @@ li {
   position: relative;
 } */
 
-.schedule-list .meet-img{
+.schedule-list .meet-img {
   margin-right: 2.5%;
   flex-basis: 59.5%;
 }
 
-.schedule-list img{
+.schedule-list img {
   border-radius: 20px;
 }
 
@@ -709,13 +723,15 @@ li {
   font-family: "FontAwesome";
   float: left;
   font-family: "Font Awesome 5 Free";
-    font-style: normal;
-    font-variant-caps: normal;
-    font-variant-ligatures: normal;
-    font-weight: 900;
+  font-style: normal;
+  font-variant-caps: normal;
+  font-variant-ligatures: normal;
+  font-weight: 900;
 }
 
-.sidebar::before { content: "\e24f"; }
+.sidebar::before {
+  content: "\e24f";
+}
 
 .clock {
   margin: 0 4%;
@@ -741,7 +757,7 @@ li {
   display: none;
 }
 
-.schedule-list.active{
+.schedule-list.active {
   display: block;
 }
 
@@ -758,6 +774,7 @@ li {
   font-size: 13px;
   text-transform: uppercase;
 }
+
 /*=================================
   schedule section styling ends here
 =================================*/
@@ -813,6 +830,7 @@ li {
   font-size: 14px;
   font-weight: 600;
 }
+
 /*=================================
   become speaker section styling ends here
 =================================*/
@@ -824,7 +842,7 @@ li {
   padding: 50px 0 100px;
 }
 
-.ticket .heading{
+.ticket .heading {
   text-align: center;
   margin-bottom: 48px;
 }
@@ -894,6 +912,7 @@ li {
   font-size: 14px;
   font-weight: 600;
 }
+
 /*=================================
   ticket section styling ends here
 =================================*/
@@ -935,6 +954,7 @@ iframe {
 .venue-box {
   padding: 35px 32px;
 }
+
 .venue-box .icon {
   display: block;
 }
@@ -945,6 +965,7 @@ iframe {
   font-family: "FontAwesome";
   float: left;
 }
+
 .venue-box .address::before {
   height: 65px;
 }
@@ -955,8 +976,13 @@ iframe {
   font-weight: 700;
 }
 
-.venue-box .envelope::before { content: "\f0e0"; }
-.venue-box .phone::before { content: "\f095"; }
+.venue-box .envelope::before {
+  content: "\f0e0";
+}
+
+.venue-box .phone::before {
+  content: "\f095";
+}
 
 .envelope,
 .phone {
@@ -966,8 +992,69 @@ iframe {
   font-weight: 600;
   line-height: 38px;
 }
+
 /*=================================
   venue section styling ends here
+=================================*/
+/*=================================
+  contact section styling ends here
+=================================*/
+.contact {
+  padding: 100px 0;
+  position: relative;
+  background: url(../images/maria-stewart-p4tj0g-_aMM-unsplash.jpg) no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.contact-form {
+  width: 66.2%;
+  margin: 0 auto;
+  border-radius: 20px;
+  background-color: var(--white-color);
+  overflow: hidden;
+}
+
+.contact-form .heading {
+  padding: 26px 35px;
+  background-color: var(--navbar-bg-color);
+  color: var(--white-color);
+}
+
+.input-box { padding: 40px; }
+
+.input input,
+textarea {
+  width: 100%;
+  padding: 13px;
+  margin-bottom: 22px;
+  border: none;
+  border-radius: 8px;
+  background: var(--section-bg-color);
+  outline: none;
+}
+
+textarea { width: 100%; }
+
+.input input::placeholder,
+textarea::placeholder {
+  color: var(--p-color);
+  font-size: 16px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 11px 0;
+  border: none;
+  border-radius: 100px;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  outline: none;
+  font-size: 17px;
+  font-weight: 700;
+}
+/*=================================
+  contact section styling ends here
 =================================*/
 /*=================================
   main styling ends here
