@@ -1330,25 +1330,62 @@ media query for 1024px starts here
     flex-basis: 20%;
   }
 
-  .meet-info .info-item { flex-basis: 32.7%; }
+  .meet-info .info-item {
+    flex-basis: 32.7%;
+  }
 
   .clock,
   .sidebar {
     margin: inherit;
   }
 
-  .schedule-list .meet-img { flex-basis: 62%; }
-  .schedule-list li { align-items: center; }
-  .name-post .post { font-size: 10px; }
-  .become-content { flex-basis: 65%; }
-  .ticket-info { font-size: 11px; }
-  .address { font-size: 18px; }
-  .venue-heading { font-size: 35px; }
-  .venue-box .address::before { height: auto; }
-  .contact-form { width: 85%; }
-  .input-row { flex-wrap: wrap; }
-  .input-row .input:nth-child(3) { flex-basis: 100%; }
-  .input { flex-basis: 46%; }
+  .schedule-list .meet-img {
+    flex-basis: 62%;
+  }
+
+  .schedule-list li {
+    align-items: center;
+  }
+
+  .name-post .post {
+    font-size: 10px;
+  }
+
+  .become-content {
+    flex-basis: 65%;
+  }
+
+  .ticket-info {
+    font-size: 11px;
+  }
+
+  .address {
+    font-size: 18px;
+  }
+
+  .venue-heading {
+    font-size: 35px;
+  }
+
+  .venue-box .address::before {
+    height: auto;
+  }
+
+  .contact-form {
+    width: 85%;
+  }
+
+  .input-row {
+    flex-wrap: wrap;
+  }
+
+  .input-row .input:nth-child(3) {
+    flex-basis: 100%;
+  }
+
+  .input {
+    flex-basis: 46%;
+  }
 }
 
 /*=================================
@@ -1358,10 +1395,23 @@ media query for 1024px starts here
 media query for 995px starts here
 =================================*/
 @media only screen and (max-width:995px) {
-  .wrapper { width: 82%; }
-  .hamburger.active .bar-two { display: none; }
-  .hamburger.active .bar-one { transform: translateY(5px) rotate(45deg); }
-  .hamburger.active .bar-three { transform: translateY(-3px) rotate(-45deg); }
+  .wrapper {
+    width: 82%;
+  }
+
+  .hamburger.active .bar-two {
+    display: none;
+  }
+
+  .hamburger.active .bar-one {
+    transform: translateY(5px) rotate(45deg);
+    transition: all .3s;
+  }
+
+  .hamburger.active .bar-three {
+    transform: translateY(-3px) rotate(-45deg);
+    transition: all .3s;
+  }
 
   .hamburger {
     display: block;
@@ -1369,11 +1419,25 @@ media query for 995px starts here
     transition: all .5s;
   }
 
-  .flex { flex-wrap: wrap; }
-  .highlight-item { flex-basis: 46%; }
-  .day { font-size: 22px; }
-  .meet-item { flex-wrap: nowrap; }
-  .schedule-list .meet-img { flex-basis: 100%; }
+  .flex {
+    flex-wrap: wrap;
+  }
+
+  .highlight-item {
+    flex-basis: 46%;
+  }
+
+  .day {
+    font-size: 22px;
+  }
+
+  .meet-item {
+    flex-wrap: nowrap;
+  }
+
+  .schedule-list .meet-img {
+    flex-basis: 100%;
+  }
 
   .highlight-list,
   .meet-info,
@@ -1381,14 +1445,18 @@ media query for 995px starts here
     gap: 25px;
   }
 
-  .meet-info .info-item { flex-basis: 45%; }
+  .meet-info .info-item {
+    flex-basis: 45%;
+  }
 
   .venue-content {
     justify-content: center;
     gap: 30px;
   }
 
-  .venue-detail { flex-basis: 80%; }
+  .venue-detail {
+    flex-basis: 80%;
+  }
 
   .top-btn {
     position: fixed;
@@ -1396,10 +1464,21 @@ media query for 995px starts here
     bottom: 25px;
   }
 
-  .speaker-list li { flex-basis: 46%; }
-  .schedule-date { flex-basis: 50%; }
-  .ticket-list { gap: 30px; }
-  .ticket-item { flex-basis: 46%; }
+  .speaker-list li {
+    flex-basis: 46%;
+  }
+
+  .schedule-date {
+    flex-basis: 50%;
+  }
+
+  .ticket-list {
+    gap: 30px;
+  }
+
+  .ticket-item {
+    flex-basis: 46%;
+  }
 
   .story,
   .speakers,
@@ -1407,6 +1486,69 @@ media query for 995px starts here
     padding: 40px 0;
   }
 }
+
 /*=================================
 media query for 995px starts here
+=================================*/
+/*=================================
+media query for 768px starts here
+=================================*/
+@media only screen and (max-width:768px) {
+  .nav.active {
+    left: 0;
+    transition: all .6s ease-out;
+  }
+
+  .nav.active .nav-item { font-size: 14px; }
+  .remove-scroll { overflow-y: hidden; }
+
+  .nav {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: -100%;
+    background: var(--navbar-bg-color);
+    transition: all .3s;
+  }
+
+  .nav-list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 35px;
+  }
+
+  .brand-logo,
+  .footer-logo {
+    flex-basis: 34%;
+  }
+
+  .lower-footer { gap: 20px; }
+
+  .meet-item {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .ticket-list {
+    flex-direction: column;
+  }
+
+  .ticket-item { width: 80%; }
+  .ticket-info { font-size: inherit; }
+  .become-speaker { padding: 40px 0; }
+  .register-btn { right: inherit; }
+  .become-speaker .wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+/*=================================
+media query for 768px starts here
 =================================*/
