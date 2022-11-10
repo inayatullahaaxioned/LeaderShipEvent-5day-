@@ -82,4 +82,54 @@ function playVideo() {
     }
   });
 };
+
 //modal video js start
+let form = document.querySelector('.contact-form'),
+  fullName = document.querySelector('.contact-form .name'),
+  email = document.querySelector('.email'),
+  subject = document.querySelector('.subject'),
+  message = document.querySelector('.message');
+const nameRegex = /^([A-Za-z]+)\s([A-Za-z]+)$/;
+const subjectRegex = /^[(A-Za-z0-9)][(\sA-Za-z0-9)]+$/;
+const emailRegex = /^([A-Za-z][A-Za-z0-9\-\_\.]+[A-Za-z0-9])\@([A-Za-z]{2,})\.([A-Za-z]{2,})$/;
+const messageRegex = /^([a-zA-Z0-9][a-zA-Z0-9\s]+)$/;
+
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+  validateInput(fullName, nameRegex);
+  validateInput(subject, subjectRegex);
+  validateInput(email, emailRegex);
+  validateInput(message, messageRegex, 250);
+  let error = document.querySelectorAll('.error');
+  if (error.length == 0) {
+    alert('Your form is submitted');
+  } else {
+    console.log('error');
+  }
+})
+
+
+function validateInput(input, regex = "", limit = 30) {
+  let inputWrap = input.parentElement;
+  var error = inputWrap.querySelector('.error');
+  if (error) {
+    error.remove();
+  }
+  if (input.value == "") {
+    appendSpan(input, '*field is required');
+  } else if (input.value.length < 4) {
+    appendSpan(input, '"*It should have atleast 4 character"');
+  } else if (input.value.length > limit) {
+    appendSpan(input, `*It should have max ${limit} character`);
+  } else if (!regex.test(input.value)) {
+    appendSpan(input, `*Please enter valid  ${input.name}`);
+  }
+}
+
+function appendSpan(input, errorMsg) {
+  let errorSpan = document.createElement('span');
+  errorSpan.className = 'error';
+  let inputWrap = input.parentElement;
+  inputWrap.appendChild(errorSpan);
+  errorSpan.innerText = errorMsg;
+}
