@@ -212,6 +212,7 @@ li {
   margin: 0;
   box-sizing: border-box;
   font-family: 'Work Sans', sans-serif;
+  scroll-behavior: smooth;
 }
 
 /* common styling  */
@@ -438,6 +439,47 @@ li {
 }
 
 .highlight-item:hover .play-icon::before { display: block; }
+
+.modal-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(57, 63, 72, 0.7);
+  z-index: 2;
+}
+
+.close-btn {
+  position: absolute;
+  top: -12%;
+  right: 22%;
+}
+
+.close-btn span {
+  display: inline-block;
+  text-indent: -9999px;
+}
+
+.modal-content {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.close-btn span::before {
+  content: "\f00d";
+  color: var(--white-color);
+  font-family: "FontAwesome";
+  float: left;
+  text-indent: 0;
+  font-size: 30px;
+}
+
+.video { width: 50%; }
 /*=================================
   highlight section styling ends here
 =================================*/
@@ -939,6 +981,7 @@ iframe { margin-right: 20px; }
 }
 
 .input-box { padding: 40px; }
+.input { flex-basis: 32%; }
 
 .input input,
 textarea {
@@ -1223,6 +1266,44 @@ media query for 995px starts here
     transition: all .5s;
   }
 
+  .nav.active {
+    left: 0;
+    transition: all .6s ease-out;
+  }
+
+  .left-heading {
+    font-size: 25px;
+  }
+
+  .nav.active .nav-item {
+    font-size: 15px;
+  }
+
+  .remove-scroll {
+    overflow: hidden;
+  }
+
+  .nav {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: -100%;
+    background: var(--navbar-bg-color);
+    transition: all .3s;
+  }
+  
+  .nav-list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 35px;
+  }
+
   .flex { flex-wrap: wrap; }
   .highlight-item { flex-basis: 46%; }
   .day { font-size: 22px; }
@@ -1276,36 +1357,6 @@ media query for 768px starts here
   .time-venue span { padding: 8px 12px; }
 
   .highlight-item figcaption { font-size: 20px; }
-
-  .nav.active {
-    left: 0;
-    transition: all .6s ease-out;
-  }
-
-  .left-heading { font-size: 25px; }
-  .nav.active .nav-item { font-size: 14px; }
-  .remove-scroll { overflow-y: hidden; }
-
-  .nav {
-    width: 100%;
-    height: 100vh;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: -100%;
-    background: var(--navbar-bg-color);
-    transition: all .3s;
-  }
-
-  .nav-list {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    gap: 35px;
-  }
 
   .brand-logo,
   .footer-logo {
