@@ -1597,6 +1597,74 @@ media query for 768px starts here
     flex-basis: 50%;
   }
 }
+
 /*=================================
 media query for 768px starts here
+=================================*/
+/*=================================
+media query for 480px starts here
+=================================*/
+@media only screen and (max-width:480px) {
+
+  .brand-logo,
+  .footer-logo {
+    flex-basis: 55%;
+  }
+
+  .hero-heading,
+  .year {
+    font-size: 25px;
+    line-height: 25px;
+  }
+
+  .time-venue {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .time-venue span { font-size: 12px; }
+  .highlight-item { flex-basis: 100%; }
+  .left-heading { font-size: 17px; }
+
+  .story-anc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .meet-btn { padding: 10px 30px; }
+  .bold-para { font-size: 22px; }
+  .bottom-para { margin-top: 15px; }
+  .speaker-content { padding: inherit; }
+  .schedule .heading { font-size: 30px; }
+  .meet-info .info-item { flex-basis: 100%; }
+  .ticket-item { width: 100%; }
+  .become-content .heading { font-size: 22px; }
+  .become-para { font-size: 12px; }
+  .ticket { padding: 40px 0; }
+
+  .speaker-list li {
+    padding: 32px;
+    flex-basis: 100%;
+  }
+
+  .schedule-date {
+    flex-basis: 100%;
+    padding: 12px 15px;
+  }
+
+  .venue .heading,
+  .contact-form .heading {
+    font-size: 30px;
+  }
+
+  .venue-detail { flex-basis: 100%; }
+  .contact-form { width: 100%; }
+  .input { flex-basis: 100%; }
+  .input-box { padding: 25px; }
+  .upper-footer { gap: 20px; }
+  .footer-menu li { flex-basis: 45%; }
+  .copyright-div { flex-basis: 86%; }
+}
+/*=================================
+media query for 480px starts here
 =================================*/
