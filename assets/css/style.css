@@ -325,7 +325,8 @@ li {
   object-fit: cover;
 }
 
-.hero-section .wrapper { position: relative; }
+.hero-section { position: relative; }
+.hero-section .wrapper { width: 100%; }
 
 .hero-section::after {
   content: "";
@@ -333,13 +334,13 @@ li {
   z-index: -1;
   top: 0;
   right: 0;
-  bottom: -20px;
+  bottom: 0;
   left: 0;
   background: linear-gradient(#2730531a 0%, #273053 100%) repeat scroll;
 }
 
 .hero-content {
-  padding: 19% 0 13.4%;
+  padding: 15% 0 10%;
   flex-direction: column;
 }
 
@@ -408,7 +409,7 @@ li {
 
 .highlight-item figcaption {
   position: absolute;
-  z-index: 2;
+  z-index: 1;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -421,7 +422,7 @@ li {
 
 .play-icon {
   position: absolute;
-  z-index: 4;
+  z-index: 3;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -981,7 +982,16 @@ iframe { margin-right: 20px; }
 }
 
 .input-box { padding: 40px; }
-.input { flex-basis: 32%; }
+.input {
+  flex-basis: 32%;
+  position: relative;
+}
+
+.error {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
 
 .input input,
 textarea {
@@ -1399,7 +1409,7 @@ media query for 480px starts here
 
   .hero-heading,
   .year {
-    font-size: 25px;
+    font-size: 24px;
     line-height: 25px;
   }
 
@@ -1464,7 +1474,7 @@ media query for 320px starts here
 
   .hero-heading,
   .year {
-    font-size: 19px;
+    font-size: 18px;
   }
 
   .bold-para {
