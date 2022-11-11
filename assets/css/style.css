@@ -461,7 +461,7 @@ li {
 
 .close-btn {
   position: absolute;
-  top: -32px;
+  top: -40px;
   right: 23%;
 }
 
@@ -486,6 +486,7 @@ li {
 }
 
 .video { width: 50%; }
+.remove-scroll { overflow: hidden; }
 /*=================================
   highlight section styling ends here
 =================================*/
@@ -1290,10 +1291,6 @@ media query for 995px starts here
 
   .nav.active .nav-item {
     font-size: 15px;
-  }
-
-  .remove-scroll {
-    overflow: hidden;
   }
 
   .nav {
