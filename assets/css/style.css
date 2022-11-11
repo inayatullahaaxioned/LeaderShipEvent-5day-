@@ -1028,6 +1028,9 @@ textarea::placeholder {
   font-size: 17px;
   font-weight: 700;
 }
+
+.error { color: red; }
+.success-msg { color: green; }
 /*=================================
   contact section styling ends here
 =================================*/
