@@ -94,7 +94,7 @@ const form = document.querySelector('.contact-form'),
   email = document.querySelector('.email'),
   subject = document.querySelector('.subject'),
   message = document.querySelector('.message');
-const nameRegex = /^([A-Za-z]+)*s([A-Za-z]+)$/;
+const nameRegex = /^([A-Za-z]+)?([A-Za-z ]+)$/;
 const subjectRegex = /^[(A-Za-z0-9)][(\sA-Za-z0-9)]+$/;
 const emailRegex = /^([A-Za-z][A-Za-z0-9\-\_\.]+[A-Za-z0-9])\@([A-Za-z]{2,})\.([A-Za-z]{2,})$/;
 const messageRegex = /^([a-zA-Z0-9][a-zA-Z0-9\s]+)$/;
@@ -104,7 +104,7 @@ form.addEventListener('submit', function (e) {
   validateInput(fullName, nameRegex);
   validateInput(subject, subjectRegex);
   validateInput(email, emailRegex);
-  validateInput(message, 250);
+  validateInput(message,messageRegex,250);
   let error = document.querySelectorAll('.error');
   if (error.length == 0) {
     const successSpan = document.createElement('span'),
