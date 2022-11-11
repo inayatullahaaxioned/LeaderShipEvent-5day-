@@ -9,7 +9,7 @@ const hamburger = document.querySelector('.hamburger'),
 hamburger.addEventListener('click', function () {
   hamburger.classList.toggle('active');
   navbar.classList.toggle('active');
-  html.classList.add('remove-scroll');
+  html.classList.toggle('remove-scroll');
 });
 //hamburger js end
 
@@ -80,7 +80,9 @@ function playVideo() {
   //logic for close modal video
   modalBox.addEventListener('click', function (e) {
     let video = document.querySelector('.video');
-    if (e.target !== video) {
+    console.log(e.target);
+    if (e.target != video) {
+      html.classList.remove('remove-scroll');
       modalBox.parentElement.removeChild(modalBox);
     }
   });
@@ -102,14 +104,14 @@ form.addEventListener('submit', function (e) {
   validateInput(fullName, nameRegex);
   validateInput(subject, subjectRegex);
   validateInput(email, emailRegex);
-  validateInput(message,250);
+  validateInput(message, 250);
   let error = document.querySelectorAll('.error');
   if (error.length == 0) {
     const successSpan = document.createElement('span'),
-          inputBox = document.querySelector('.input-box');
-          successSpan.className = "success-msg";
-          successSpan.innerText = "Your form submit successfully";
-          inputBox.appendChild(successSpan);
+      inputBox = document.querySelector('.input-box');
+    successSpan.className = "success-msg";
+    successSpan.innerText = "Your form submit successfully";
+    inputBox.appendChild(successSpan);
   } else {
     console.log('error');
   }
