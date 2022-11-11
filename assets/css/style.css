@@ -336,6 +336,7 @@ li {
   position: absolute;
   z-index: -1;
   top: 0;
+  left: 0;
   opacity: .8;
   -o-object-fit: cover;
      object-fit: cover;
@@ -350,7 +351,7 @@ li {
   z-index: -1;
   top: 0;
   right: 0;
-  bottom: 0;
+  bottom: -5px;
   left: 0;
   background: -webkit-gradient(linear, left top, left bottom, from(#2730531a), to(#273053)) repeat scroll;
   background: -o-linear-gradient(#2730531a 0%, #273053 100%) repeat scroll;
@@ -458,6 +459,7 @@ li {
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  cursor: pointer;
   text-indent: -9999px;
 }
 
@@ -503,6 +505,7 @@ li {
   position: absolute;
   top: -40px;
   right: 23%;
+  cursor: pointer;
 }
 
 .close-btn span {
@@ -1713,4 +1716,30 @@ media query for 320px starts here
 }
 /*=================================
 media query for 320px ends here
+=================================*/
+/*=================================
+media query for 1440px+ starts here
+=================================*/
+@media only screen and (min-width:1440px) {
+  .brand-logo,
+  .footer-logo {
+    flex-basis: 13%;
+  }
+
+  .highlight-item img {
+    max-width: inherit;
+    max-height: inherit;
+  }
+
+  iframe,
+  .venue-detail {
+    flex-basis: 48%;
+  }
+
+  .venue-content {
+    justify-content: space-between;
+  }
+}
+/*=================================
+media query for 1440px+ ends here
 =================================*/
