@@ -1,10 +1,3 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
-
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
 /* ==========================================================================
@@ -190,8 +183,7 @@ sub {
 
 /*for all*/
 body {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: sans-serif;
 }
 
@@ -218,23 +210,16 @@ li {
 *::after {
   padding: 0;
   margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: 'Work Sans', sans-serif;
   scroll-behavior: smooth;
 }
 
 /* common styling  */
 .flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  align-items: center;
+  /* justify-content: space-between; */
 }
 
 .underline {
@@ -271,10 +256,17 @@ li {
 =================================*/
 .header {
   padding: 16px 0;
+  position: sticky;
+  z-index: 2;
+  top: 0;
   background-color: var(--navbar-bg-color);
 }
 
-.header .wrapper { margin-left: 12.5%; }
+.nav {
+  display: flex;
+  justify-content: space-between;
+  flex-basis: 66%;
+}
 
 .logo {
   display: inline-block;
@@ -283,7 +275,10 @@ li {
   text-transform: uppercase;
 }
 
-.brand-logo { -ms-flex-preferred-size: 15%; flex-basis: 15%; }
+.brand-logo {
+  margin-right: 21%;
+  flex-basis: 15%;
+}
 
 .logo::before {
   content: "\f140";
@@ -296,18 +291,24 @@ li {
 }
 
 .nav-item {
+  margin: 0 15px;
   color: var(--white-color);
   font-size: 13px;
   font-weight: 600;
 }
 
 .nav-item.active { color: var(--primary-color); }
-.nav { -ms-flex-preferred-size: 62.5%; flex-basis: 62.5%; }
+
+.header-btn {
+  margin-left:1.5%;
+}
 
 .custom-btn {
   padding: 12px 18px;
-  background-color: var(--secondary-color);
   border-radius: 25px;
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+  font-size: 13px;
   font-weight: 700;
 }
 
@@ -338,8 +339,7 @@ li {
   top: 0;
   left: 0;
   opacity: .8;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .hero-section { position: relative; }
@@ -351,19 +351,14 @@ li {
   z-index: -1;
   top: 0;
   right: 0;
-  bottom: -5px;
+  bottom: 0;
   left: 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(#2730531a), to(#273053)) repeat scroll;
-  background: -o-linear-gradient(#2730531a 0%, #273053 100%) repeat scroll;
-  background: linear-gradient(#2730531a 0%, #273053 100%) repeat scroll;
+  background: linear-gradient(#2730531a 0, #273053 100%) repeat scroll;
 }
 
 .hero-content {
   padding: 15% 0 10%;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 .hero-heading,
@@ -386,7 +381,6 @@ li {
 }
 
 .next-section-btn {
-  margin-left: 1.5%;
   display: inline-block;
   text-indent: -9999px;
 }
@@ -396,15 +390,9 @@ li {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   background-color: var(--white-color);
   color: var(--black-color);
   font-family: "FontAwesome";
@@ -424,16 +412,17 @@ li {
   background-color: var(--navbar-bg-color);
 }
 
+.highlight-list { justify-content: space-between; }
+
 .highlight-item img {
-  max-width: 344px;
-  max-height: 228px;
+  transition: all .6s;
 }
 
 .highlight-item {
   position: relative;
   overflow: hidden;
-  -ms-flex-preferred-size: 32%;
-      flex-basis: 32%;
+  flex-basis: 32%;
+  cursor: pointer;
 }
 
 .highlight-item figcaption {
@@ -441,9 +430,7 @@ li {
   z-index: 1;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   width: 100%;
   text-align: center;
   color: var(--white-color);
@@ -456,10 +443,7 @@ li {
   z-index: 1;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  cursor: pointer;
+  transform: translate(-50%, -50%);
   text-indent: -9999px;
 }
 
@@ -477,8 +461,6 @@ li {
 
 .highlight-item:hover figcaption {
   display: none;
-  -webkit-transition: all .1s;
-  -o-transition: all .1s;
   transition: all .1s;
 }
 
@@ -488,16 +470,10 @@ li {
   left: 0;
   width: 100%;
   height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: rgba(57, 63, 72, 0.7);
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(57, 63, 72, .7);
   z-index: 2;
 }
 
@@ -505,7 +481,6 @@ li {
   position: absolute;
   top: -40px;
   right: 23%;
-  cursor: pointer;
 }
 
 .close-btn span {
@@ -514,12 +489,8 @@ li {
 }
 
 .modal-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   position: relative;
 }
 
@@ -544,39 +515,38 @@ li {
 .story .heading { margin-bottom: 35px; }
 
 .left-heading {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 700;
   margin-bottom: 20px;
 }
 
 .avatar-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin-right: 5%;
 }
 
 .avatar-img {
-  width: 40px;
-  height: 40px;
+  height: 100%;
   border: 1px solid var(--white-color);
   border-radius: 50%;
+  object-fit: cover;
 }
 
-.story-box { -webkit-box-align: initial; -ms-flex-align: initial; align-items: initial; }
-.left-story { padding-right: 2%; }
+.story-box { align-items: initial; }
+.left-story { margin-right: 2%; }
 
 .meet-btn,
 .schedule-btn {
   padding: 10px 17px;
   border-radius: 25px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
 }
 
 .meet-btn {
+  margin-right: 2%;
   border: 2px solid var(--primary-color);
-  margin-right: 1.8%;
+  color: var(--primary-color);
 }
 
 .schedule-btn {
@@ -587,22 +557,33 @@ li {
 
 .bold-para {
   margin-bottom: 48px;
-  font-size: 25px;
+  font-size: 23px;
   font-weight: 600;
   line-height: 33px;
 }
 
-.bottom-para { font-size: 14px; }
+.left-story .section-para { padding-right: 5%; }
+
+.bottom-para {
+  color: var(--p-color);
+  font-size: 14px;
+}
 
 .right-bottom-story {
   padding: 48px 0;
   border-top: 1px solid var(--p-color);
-  -webkit-box-pack: initial;
-      -ms-flex-pack: initial;
-          justify-content: initial;
+  justify-content: initial;
 }
 
-.avatar-list figure { width: 36px; }
+.avatar-item {
+  width: 40px;
+  height: 40px;
+}
+
+.avatar-item:not(:first-child) {
+  position: relative;
+  right: 6px;
+}
 /*=================================
   story section styling ends here
 =================================*/
@@ -616,8 +597,7 @@ li {
 
 .speaker-content {
   padding: 0 8.5%;
-  -ms-flex-preferred-size: 70%;
-      flex-basis: 70%;
+  flex-basis: 70%;
 }
 
 .speaker-content .heading { margin-bottom: 23px; }
@@ -628,14 +608,14 @@ li {
 }
 
 .featured {
-  padding: 5px;
+  padding: 6px;
   border-radius: 4px;
   position: absolute;
   top: 8px;
   right: 1.5%;
   background-color: var(--secondary-color);
   color: var(--white-color);
-  font-size: 12px;
+  font-size: 10px;
   text-transform: uppercase;
 }
 
@@ -653,6 +633,18 @@ li {
   position: relative;
 }
 
+.ceo-info-group,
+.info-group {
+  background: linear-gradient(to left, #fff 50%, var(--primary-color) 50%) right;
+  background-size: 200%;
+  transition: all .5s ease;
+}
+
+.ceo-info-group:hover,
+.info-group:hover {
+  background-position: left;
+}
+
 .ceo-name {
   font-size: 21px;
   font-weight: 600;
@@ -665,11 +657,9 @@ li {
 }
 
 .team-social {
+  opacity: 0;
   position: absolute;
   right: 5px;
-  -webkit-transition: all 3s;
-  -o-transition: all 3s;
-  transition: all 3s;
 }
 
 .info-group .team-social li { margin: 0; }
@@ -702,16 +692,17 @@ li {
   left: 0;
   bottom: 0;
   background: var(--primary-color);
-  -webkit-transition: all 1s;
-  -o-transition: all 1s;
-  transition: all 1s;
+  transition: all .5s;
+}
+
+.speaker-list {
+  margin-top: 20px;
+  justify-content: space-between;
 }
 
 .speaker-list li {
-  margin-top: 20px;
   position: relative;
-  -ms-flex-preferred-size: 23.5%;
-      flex-basis: 23.5%;
+  flex-basis: 23.5%;
 }
 
 .social-ceo,
@@ -725,15 +716,9 @@ li {
   content: "\f16d";
   width: 35px;
   height: 35px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
   background-color: var(--white-color);
   color: var(--black-color);
@@ -741,12 +726,12 @@ li {
   font-family: "FontAwesome";
   float: left;
   text-indent: 0;
+  transition: all .3s;
 }
 
 .whatsapp::before { content: "\f232"; }
 .facebook::before { content: "\f09a"; }
 .google::before { content: "\f1a0"; }
-.team-social { display: none; }
 /*=================================
   speakers section styling ends here
 =================================*/
@@ -762,13 +747,16 @@ li {
 
 .schedule-date {
   padding: 22px;
-  -ms-flex-preferred-size: 25%;
-      flex-basis: 25%;
-  -webkit-box-shadow: 0 16px 48px rgb(0 0 0 / 18%);
-          box-shadow: 0 16px 48px rgb(0 0 0 / 18%);
+  border-left: 3px solid transparent;
+  flex-basis: 25%;
+  cursor: pointer;
 }
 
-.schedule-date.active { border-left: 3px solid var(--primary-color); }
+.schedule-date.active {
+  border-left: 3px solid var(--primary-color);
+  box-shadow: 0 16px 48px rgb(0 0 0 / 18%);
+}
+
 .schedule-date.active .day { color: var(--primary-color); }
 
 .day {
@@ -786,17 +774,14 @@ li {
 
 .schedule-list .meet-img {
   margin-right: 2.5%;
-  -ms-flex-preferred-size: 59.5%;
-      flex-basis: 59.5%;
+  flex-basis: 59.5%;
 }
 
 .schedule-list img { border-radius: 20px; }
 
 .schedule-list li {
   padding: 45px 0;
-  -webkit-box-align: inherit;
-      -ms-flex-align: inherit;
-          align-items: inherit;
+  align-items: inherit;
 }
 
 .meet-title {
@@ -808,6 +793,7 @@ li {
 .clock,
 .sidebar {
   display: block;
+  color: #212529;
 }
 
 .clock::before,
@@ -827,36 +813,31 @@ li {
   height: 42px;
   margin-right: 15px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .meet-info .info-item {
   padding: 0;
-  -webkit-box-pack: initial;
-      -ms-flex-pack: initial;
-          justify-content: initial;
+  justify-content: initial;
 }
 
 .schedule-list { display: none; }
 .schedule-list.active { display: block; }
 
 .name-post {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
-.meet-info { -webkit-box-pack: start; -ms-flex-pack: start; justify-content: flex-start; }
+.meet-info { justify-content: flex-start; }
+
+.name { color: #212529; }
 
 .post {
   color: var(--p-color);
-  font-size: 13px;
+  font-size: 11px;
   text-transform: uppercase;
 }
-
 /*=================================
   schedule section styling ends here
 =================================*/
@@ -866,6 +847,9 @@ li {
 .become-speaker {
   padding: 105px 0;
   position: relative;
+  background: url(../images/terren-hurst-blgOFmPIlr0-unsplash.jpg) no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .become-speaker .heading,
@@ -893,17 +877,16 @@ li {
 .become-bg img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
-.become-content { -ms-flex-preferred-size: 56%; flex-basis: 56%; }
+.become-content { flex-basis: 56%; }
 
 .register-btn {
   padding: 10px 15px;
   border-radius: 20px;
   position: relative;
-  right: 11.8%;
+  left: 20%;
   background-color: var(--white-color);
   color: var(--black-color);
   font-size: 14px;
@@ -922,23 +905,27 @@ li {
   margin-bottom: 48px;
 }
 
+.ticket-list {
+  flex-wrap: wrap;
+}
+
 .name-price {
   padding: 16px 30px;
+  justify-content: space-between;
   background-color: var(--navbar-bg-color);
   color: var(--white-color);
   font-weight: 700;
 }
 
-.ticket-name { font-size: 28px; }
+.ticket-name { font-size: 24px; }
 .price { font-size: 20px; }
 
 .ticket-item {
+  margin: 0 1.85% 20px 0;
   border-radius: 20px;
   overflow: hidden;
-  -ms-flex-preferred-size: 32%;
-      flex-basis: 32%;
-  -webkit-box-shadow: 0 16px 48px rgba(0, 0, 0, .175);
-          box-shadow: 0 16px 48px rgba(0, 0, 0, .175);
+  flex-basis: 31.45%;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, .175);
 }
 
 .ticket-feature { padding: 25px 30px; }
@@ -946,6 +933,7 @@ li {
 .ticket-info {
   padding: 10px 0;
   color: var(--p-color);
+  font-size: 15px;
 }
 
 .ticket-icon::before {
@@ -990,27 +978,32 @@ li {
 }
 
 .venue .heading { margin-bottom: 50px; }
-iframe { margin-right: 20px; }
-.venue-content { -webkit-box-pack: initial; -ms-flex-pack: initial; justify-content: initial; }
+
+iframe {
+  border-radius: 25px;
+  margin-right: 20px;
+}
+.venue-content { justify-content: initial; }
 
 .venue-detail {
   border-radius: 20px;
   overflow: hidden;
-  -webkit-box-shadow: 0 16px 48px rgba(0, 0, 0, .175);
-          box-shadow: 0 16px 48px rgba(0, 0, 0, .175);
-  -ms-flex-preferred-size: 49%;
-      flex-basis: 49%;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, .175);
+  flex-basis: 49%;
 }
 
 .venue-heading {
   padding: 22px 28px;
   background-color: var(--navbar-bg-color);
   color: var(--white-color);
-  font-size: 40px;
+  font-size: 37px;
   font-weight: 900;
 }
 
-.venue-box { padding: 35px 32px; }
+.venue-box {
+  padding: 35px 32px;
+  background-color: var(--section-bg-color);
+}
 .venue-box .icon { display: block; }
 
 .venue-box .icon::before {
@@ -1068,16 +1061,23 @@ iframe { margin-right: 20px; }
 }
 
 .input-box { padding: 40px; }
+
 .input {
-  -ms-flex-preferred-size: 32%;
-      flex-basis: 32%;
+  margin-right: 3%;
+  flex-basis: 32%;
   position: relative;
+}
+
+.input:nth-child(3) {
+  margin-right: 0;
 }
 
 .error {
   position: absolute;
   bottom: 0;
   left: 0;
+  color: red;
+  font-size: 13px;
 }
 
 .input input,
@@ -1091,32 +1091,16 @@ textarea {
   outline: none;
 }
 
-textarea { width: 100%; }
-
-.input input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-  color: var(--p-color);
-  font-size: 16px;
-}
-
-.input input::-moz-placeholder, textarea::-moz-placeholder {
-  color: var(--p-color);
-  font-size: 16px;
-}
-
-.input input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-  color: var(--p-color);
-  font-size: 16px;
-}
-
-.input input::-ms-input-placeholder, textarea::-ms-input-placeholder {
-  color: var(--p-color);
-  font-size: 16px;
+textarea {
+  margin-right: 0;
+  width: 100%;
+  resize: none;
 }
 
 .input input::placeholder,
 textarea::placeholder {
   color: var(--p-color);
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .submit-btn {
@@ -1124,14 +1108,14 @@ textarea::placeholder {
   padding: 11px 0;
   border: none;
   border-radius: 100px;
+  outline: none;
   background-color: var(--primary-color);
   color: var(--white-color);
-  outline: none;
+  font-size: 15px;
   font-size: 17px;
   font-weight: 700;
 }
 
-.error { color: red; }
 .success-msg { color: green; }
 /*=================================
   contact section styling ends here
@@ -1145,10 +1129,10 @@ textarea::placeholder {
 .upper-footer {
   padding: 35px 0 50px;
   border-bottom: 1px solid #dee2e6;
+  justify-content: space-between;
 }
 
-.footer-logo { -ms-flex-preferred-size: 16%; flex-basis: 16%; }
-.social-list { gap: 30px; }
+.footer-logo { flex-basis: 16%; }
 
 .social-icon {
   display: inline-block;
@@ -1157,20 +1141,15 @@ textarea::placeholder {
 
 .social-icon::before {
   content: "\f09a";
-  width: 33px;
-  height: 33px;
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
   border-radius: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   color: var(--black-color);
-  font-size: 20px;
+  font-size: 18px;
   font-family: "FontAwesome";
   float: left;
   text-indent: 0;
@@ -1181,15 +1160,23 @@ textarea::placeholder {
 .youtube::before { content: "\f167"; }
 
 .lower-footer {
-  padding: 28px 0;
+  padding: 50px 0 20px;
+  justify-content: space-between;
   color: var(--p-color);
   font-size: 13px;
 }
 
-.lower-footer a { color: var(--p-color); }
-.footer-menu { gap: 16px; }
-.copyright p { line-height: 26px; }
-.copyright-div { -ms-flex-preferred-size: 37.5%; flex-basis: 37.5%; }
+.lower-footer a {
+  margin-right: 20px;
+  color: var(--p-color);
+  font-size: 14px;
+}
+
+.copyright p { line-height: 20px; }
+.copyright-div {
+  justify-content: space-between;
+  flex-basis: 37.5%;
+}
 
 
 .top-btn {
@@ -1203,15 +1190,9 @@ textarea::placeholder {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   background-color: var(--section-bg-color);
   color: var(--black-color);
   font-size: 20px;
@@ -1236,65 +1217,54 @@ media query for hover effect in desktop starts here
 @media only screen and (min-width: 995px) {
   .nav-item:hover {
     color: var(--primary-color);
-    -webkit-transition: all .5s;
-    -o-transition: all .5s;
     transition: all .5s;
   }
 
   .custom-btn:hover {
     background-color: var(--primary-color);
     color: var(--white-color);
-    -webkit-transition: all .5s;
-    -o-transition: all .5s;
     transition: all .5s;
   }
 
   .next-section-btn:hover::before {
     background-color: var(--primary-color);
     color: var(--white-color);
-    -webkit-transition: all .5s;
-    -o-transition: all .5s;
     transition: all .5s;
   }
 
   .highlight-item:hover::before {
     display: block;
-    -webkit-transition: all .1s;
-    -o-transition: all .1s;
     transition: all .1s;
   }
 
   .highlight-item:hover img {
-    -webkit-transform: scale(1.3);
-        -ms-transform: scale(1.3);
-            transform: scale(1.3);
-    -webkit-transition: all 2s;
-    -o-transition: all 2s;
-    transition: all 2s;
+    transform: scale(1.2);
+    transition: all .6s;
   }
 
   .meet-btn:hover,
   .schedule-btn:hover {
     background-color: var(--primary-color);
     color: var(--white-color);
-    -webkit-transition: all .5s;
-    -o-transition: all .5s;
     transition: all .5s;
+  }
+
+  .social-ceo:hover::before,
+  .social-team:hover::before {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    transform: scale(.9);
+    transition: all .3s;
   }
 
   .schedule-date:hover {
     border-left: 3px solid var(--primary-color);
-    -webkit-box-shadow: 0 16px 48px rgba(0, 0, 0, .175);
-            box-shadow: 0 16px 48px rgba(0, 0, 0, .175);
-    -webkit-transition: all .2s;
-    -o-transition: all .2s;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, .175);
     transition: all .2s;
   }
 
   .schedule-date:hover .day {
     color: var(--primary-color);
-    -webkit-transition: all .2s;
-    -o-transition: all .2s;
     transition: all .2s;
   }
 
@@ -1302,49 +1272,35 @@ media query for hover effect in desktop starts here
   .buy-btn:hover {
     background-color: var(--primary-color);
     color: var(--white-color);
-    -webkit-transition: all .3s;
-    -o-transition: all .3s;
     transition: all .3s;
   }
 
   .envelope:hover,
   .phone:hover {
     color: var(--primary-color);
-    -webkit-transition: all .3s;
-    -o-transition: all .3s;
     transition: all .3s;
   }
 
   .submit-btn:hover {
     background-color: var(--navbar-bg-color);
-    -webkit-transition: all .3s;
-    -o-transition: all .3s;
     transition: all .3s;
   }
 
   .social-icon:hover::before {
-    -webkit-transform: scale(1.03);
-        -ms-transform: scale(1.03);
-            transform: scale(1.03);
+    transform: scale(1.03);
     background-color: var(--primary-color);
-    -webkit-transition: all .3s;
-    -o-transition: all .3s;
     transition: all .3s;
   }
 
   .top-btn:hover::before {
     background-color: var(--primary-color);
     color: var(--white-color);
-    -webkit-transition: all .3s;
-    -o-transition: all .3s;
     transition: all .3s;
   }
 
   .footer-menu-item:hover,
   .design a:hover {
     color: var(--primary-color);
-    -webkit-transition: all .3s;
-    -o-transition: all .3s;
     transition: all .3s;
   }
 
@@ -1352,29 +1308,48 @@ media query for hover effect in desktop starts here
   .info-group:hover {
     background-color: var(--primary-color);
     color: var(--white-color);
-    -webkit-transition: all 1s;
-    -o-transition: all 1s;
-    transition: all 1s;
+    transition: all .3s;
   }
 
   .ceo-info-group:hover .ceo-designation,
   .info-group:hover .designation {
     color: var(--white-color);
-    -webkit-transition: all .6s;
-    -o-transition: all .6s;
     transition: all .6s;
   }
 
   .ceo-info-group:hover .team-social,
   .info-group:hover .team-social {
-    display: block;
-    -webkit-transition: all 3s;
-    -o-transition: all 3s;
-    transition: all 3s;
+    opacity: 1;
+    transition-delay: .5s;
   }
 }
 /*=================================
 media query for hover effect in desktop starts here
+=================================*/
+/*=================================
+media query for 1280px starts here
+=================================*/
+@media only screen and (max-width:1280px) {
+  .header .wrapper {
+    justify-content: space-between;
+  }
+
+  .brand-logo {
+    flex-basis: 18%;
+    margin-right: initial;
+  }
+
+  .header-btn { flex-basis: 16%; }
+
+  .meet-info .info-item {
+    justify-content: space-between;
+    flex-basis: 28%;
+  }
+
+  .ticket-info { font-size: 11px; }
+}
+/*=================================
+media query for 1280px ends here
 =================================*/
 /*=================================
 media query for 1024px starts here
@@ -1382,29 +1357,29 @@ media query for 1024px starts here
 @media only screen and (max-width:1024px) {
   .brand-logo,
   .footer-logo {
-    -ms-flex-preferred-size: 20%;
-        flex-basis: 20%;
+    flex-basis: 22%;
   }
 
-  .meet-info .info-item { -ms-flex-preferred-size: 32.7%; flex-basis: 32.7%; }
+  .header-btn { flex-basis: 20%; }
+  .meet-info .info-item { flex-basis: 32.7%; }
 
   .clock,
   .sidebar {
     margin: inherit;
   }
 
-  .schedule-list .meet-img { -ms-flex-preferred-size: 62%; flex-basis: 62%; }
-  .schedule-list li { -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+  .schedule-list .meet-img { flex-basis: 62%; }
+  .schedule-list li { align-items: center; }
   .name-post .post { font-size: 10px; }
-  .become-content { -ms-flex-preferred-size: 65%; flex-basis: 65%; }
+  .become-content { flex-basis: 65%; }
   .ticket-info { font-size: 11px; }
   .address { font-size: 18px; }
   .venue-heading { font-size: 35px; }
   .venue-box .address::before { height: auto; }
   .contact-form { width: 85%; }
-  .input-row { -ms-flex-wrap: wrap; flex-wrap: wrap; }
-  .input-row .input:nth-child(3) { -ms-flex-preferred-size: 100%; flex-basis: 100%; }
-  .input { -ms-flex-preferred-size: 46%; flex-basis: 46%; }
+  .input-row { flex-wrap: wrap; }
+  .input-row .input:nth-child(3) { flex-basis: 100%; }
+  .input { flex-basis: 46%; }
 }
 /*=================================
 media query for 1024px starts here
@@ -1418,45 +1393,28 @@ media query for 995px starts here
   .hamburger.active .bar-two { display: none; }
 
   .hamburger.active .bar-one {
-    -webkit-transform: translateY(5px) rotate(45deg);
-        -ms-transform: translateY(5px) rotate(45deg);
-            transform: translateY(5px) rotate(45deg);
-    -webkit-transition: all .3s;
-    -o-transition: all .3s;
+    transform: translateY(5px) rotate(45deg);
     transition: all .3s;
   }
 
   .hamburger.active .bar-three {
-    -webkit-transform: translateY(-3px) rotate(-45deg);
-        -ms-transform: translateY(-3px) rotate(-45deg);
-            transform: translateY(-3px) rotate(-45deg);
-    -webkit-transition: all .3s;
-    -o-transition: all .3s;
+    transform: translateY(-3px) rotate(-45deg);
     transition: all .3s;
   }
 
   .hamburger {
     display: block;
     z-index: 3;
-    -webkit-transition: all .5s;
-    -o-transition: all .5s;
     transition: all .5s;
   }
 
   .nav.active {
     left: 0;
-    -webkit-transition: all .6s ease-out;
-    -o-transition: all .6s ease-out;
     transition: all .6s ease-out;
   }
 
-  .left-heading {
-    font-size: 25px;
-  }
-
-  .nav.active .nav-item {
-    font-size: 15px;
-  }
+  .left-heading { font-size: 25px; }
+  .nav.active .nav-item { font-size: 15px; }
 
   .nav {
     width: 100%;
@@ -1466,35 +1424,24 @@ media query for 995px starts here
     top: 0;
     left: -100%;
     background: var(--navbar-bg-color);
-    -webkit-transition: all .3s;
-    -o-transition: all .3s;
     transition: all .3s;
   }
   
   .nav-list {
     width: 100%;
     height: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     gap: 35px;
   }
 
-  .flex { -ms-flex-wrap: wrap; flex-wrap: wrap; }
-  .highlight-item { -ms-flex-preferred-size: 46%; flex-basis: 46%; }
+  .flex { flex-wrap: wrap; }
+  .highlight-item { flex-basis: 46%; }
   .day { font-size: 22px; }
-  .meet-item { -ms-flex-wrap: nowrap; flex-wrap: nowrap; }
-  .schedule-list .meet-img { -ms-flex-preferred-size: 100%; flex-basis: 100%; }
+  .meet-item { flex-wrap: nowrap; }
+  .schedule-list .meet-img { flex-basis: 100%; }
 
   .highlight-list,
   .meet-info,
@@ -1502,16 +1449,14 @@ media query for 995px starts here
     gap: 25px;
   }
 
-  .meet-info .info-item { -ms-flex-preferred-size: 45%; flex-basis: 45%; }
+  .meet-info .info-item { flex-basis: 45%; }
 
   .venue-content {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
     gap: 30px;
   }
 
-  .venue-detail { -ms-flex-preferred-size: 80%; flex-basis: 80%; }
+  .venue-detail { flex-basis: 80%; }
 
   .top-btn {
     position: fixed;
@@ -1519,10 +1464,14 @@ media query for 995px starts here
     bottom: 25px;
   }
 
-  .speaker-list li { -ms-flex-preferred-size: 46%; flex-basis: 46%; }
-  .schedule-date { -ms-flex-preferred-size: 50%; flex-basis: 50%; }
+  .speaker-list li { flex-basis: 46%; }
+  .schedule-date { flex-basis: 50%; }
   .ticket-list { gap: 30px; }
-  .ticket-item { -ms-flex-preferred-size: 46%; flex-basis: 46%; }
+
+  .ticket-item {
+    margin: 0 3.5% 20px 0;
+    flex-basis: 44%;
+  }
 
   .story,
   .speakers,
@@ -1543,8 +1492,13 @@ media query for 995px starts here
 
   .ceo-info-group .team-social,
   .info-group .team-social {
-    display: block;
+    opacity: 0;
+    transition: all .5s ease;
   }
+
+  .input { flex-basis: 48.5%; }
+
+  .input:nth-child(2) { margin: 0; }
 }
 /*=================================
 media query for 995px starts here
@@ -1564,37 +1518,36 @@ media query for 768px starts here
 
   .brand-logo,
   .footer-logo {
-    -ms-flex-preferred-size: 34%;
-        flex-basis: 34%;
+    flex-basis: 31%;
   }
 
+  .header-btn { flex-basis: 28%; }
   .lower-footer { gap: 20px; }
 
   .meet-item {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     gap: 25px;
   }
 
-  .ticket-list { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
-  .speaker-content { -ms-flex-preferred-size: 100%; flex-basis: 100%; }
+  .ticket-list { flex-direction: column; }
+  .speaker-content { flex-basis: 100%; }
   .ticket-item { width: 80%; }
   .ticket-info { font-size: inherit; }
   .become-speaker { padding: 40px 0; }
   .register-btn { right: inherit; }
 
   .become-speaker .wrapper {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .speaker-list {
+    flex-direction: column;
     gap: 20px;
   }
 
   .become-content .heading { font-size: 30px; }
-  .copyright-div { -ms-flex-preferred-size: 50%; flex-basis: 50%; }
+  .copyright-div { flex-basis: 50%; }
   .close-btn { right: 10%; }
   .video { width: 70%; }
 }
@@ -1605,38 +1558,32 @@ media query for 768px ends here
 media query for 480px starts here
 =================================*/
 @media only screen and (max-width:480px) {
+  .heading { font-size: 28px; }
+
   .brand-logo,
   .footer-logo {
-    -ms-flex-preferred-size: 53%;
-        flex-basis: 53%;
+    flex-basis: 46%;
   }
 
   .hero-heading,
   .year {
-    font-size: 24px;
+    font-size: 23px;
     line-height: 25px;
   }
 
   .time-venue {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
   }
 
+  .register-btn { left: 0; }
   .time-venue span { font-size: 12px; }
-  .highlight-item { -ms-flex-preferred-size: 100%; flex-basis: 100%; }
+  .highlight-item { flex-basis: 100%; }
   .left-heading { font-size: 17px; }
 
   .story-anc {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
     gap: 10px;
   }
 
@@ -1645,7 +1592,7 @@ media query for 480px starts here
   .bottom-para { margin-top: 15px; }
   .speaker-content { padding: inherit; }
   .schedule .heading { font-size: 30px; }
-  .meet-info .info-item { -ms-flex-preferred-size: 100%; flex-basis: 100%; }
+  .meet-info .info-item { flex-basis: 100%; }
   .ticket-item { width: 100%; }
   .become-content .heading { font-size: 22px; }
   .become-para { font-size: 12px; }
@@ -1653,29 +1600,34 @@ media query for 480px starts here
 
   .speaker-list li {
     padding: inherit;
-    -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
+    flex-basis: 100%;
   }
+
+  .ceo-image { width: 100%; }
 
   .schedule-date {
     padding: 12px 15px;
-    -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
+    flex-basis: 100%;
   }
 
   .venue .heading,
   .contact-form .heading {
-    font-size: 30px;
+    font-size: 28px;
   }
 
-  .venue-detail { -ms-flex-preferred-size: 100%; flex-basis: 100%; }
+  .meet-info .info-item { justify-content: inherit; }
+  .venue-heading { font-size: 28px; }
+  .venue-box a { font-size: 18px; }
+  .address { font-size: 16px; }
+  .venue-detail { flex-basis: 100%; }
   .contact { padding: 50px 0; }
   .contact-form { width: 100%; }
-  .input { -ms-flex-preferred-size: 100%; flex-basis: 100%; }
+  .input { flex-basis: 100%; }
   .input-box { padding: 25px; }
   .upper-footer { gap: 20px; }
-  .footer-menu li { -ms-flex-preferred-size: 45%; flex-basis: 45%; }
-  .copyright-div { -ms-flex-preferred-size: 86%; flex-basis: 86%; }
+  .footer-menu li { flex-basis: 45%; }
+  .copyright-div { flex-basis: 86%; }
+  .ceo-info-group .facebook { display: none; }
 }
 /*=================================
 media query for 480px ends here
@@ -1708,6 +1660,7 @@ media query for 320px starts here
   .phone {
     font-size: 15px;
   }
+  
   .ceo-info-group .facebook { display: none; }
   .contact-form .heading { font-size: 25px; }
   .contact-form .heading { padding: 20px; }
@@ -1716,30 +1669,4 @@ media query for 320px starts here
 }
 /*=================================
 media query for 320px ends here
-=================================*/
-/*=================================
-media query for 1440px+ starts here
-=================================*/
-@media only screen and (min-width:1440px) {
-  .brand-logo,
-  .footer-logo {
-    flex-basis: 13%;
-  }
-
-  .highlight-item img {
-    max-width: inherit;
-    max-height: inherit;
-  }
-
-  iframe,
-  .venue-detail {
-    flex-basis: 48%;
-  }
-
-  .venue-content {
-    justify-content: space-between;
-  }
-}
-/*=================================
-media query for 1440px+ ends here
 =================================*/
