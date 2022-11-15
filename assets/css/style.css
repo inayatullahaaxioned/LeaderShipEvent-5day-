@@ -276,7 +276,7 @@ li {
 }
 
 .brand-logo {
-  margin-right: 21%;
+  margin-right: 24%;
   flex-basis: 15%;
 }
 
@@ -821,6 +821,7 @@ li {
   justify-content: initial;
 }
 
+.meet-title a { color: var(--black-color); }
 .schedule-list { display: none; }
 .schedule-list.active { display: block; }
 
