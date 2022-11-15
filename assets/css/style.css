@@ -1069,6 +1069,12 @@ iframe {
   position: relative;
 }
 
+.input-row { position: relative; }
+
+.input-box .error {
+  position: absolute;
+  bottom: 0;
+}
 .input:nth-child(3) {
   margin-right: 0;
 }
