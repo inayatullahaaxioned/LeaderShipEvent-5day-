@@ -59,7 +59,7 @@ function showSchedule(day, dayNo) {
 //tab filter in schedule section end
 
 //modal video js start
-const playBtn = document.querySelectorAll('.play-icon');
+const playBtn = document.querySelectorAll('.highlight-list');
 
 playBtn.forEach(function (buttons) {
   buttons.addEventListener('click', playVideo);
@@ -112,6 +112,7 @@ form.addEventListener('submit', function (e) {
     successSpan.className = "success-msg";
     successSpan.innerText = "Your form submit successfully";
     inputBox.appendChild(successSpan);
+    form.reset();
   } else {
     console.log('error');
   }
@@ -127,9 +128,9 @@ function validateInput(input, regex = "", limit = 30) {
   if (input.value == "") {
     appendSpan(input, '*field is required');
   } else if (input.value.length < 4) {
-    appendSpan(input, '"*It should have atleast 4 character"');
+    appendSpan(input, '"*atleast 4 character required"');
   } else if (input.value.length > limit) {
-    appendSpan(input, `*It should have max ${limit} character`);
+    appendSpan(input, `*maximum ${limit} character allowed`);
   } else if (!regex.test(input.value)) {
     appendSpan(input, `*Please enter valid  ${input.name}`);
   }
