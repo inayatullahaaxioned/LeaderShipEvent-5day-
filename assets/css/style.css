@@ -640,11 +640,6 @@ li {
   transition: all .5s ease;
 }
 
-.ceo-info-group:hover,
-.info-group:hover {
-  background-position: left;
-}
-
 .ceo-name {
   font-size: 21px;
   font-weight: 600;
@@ -1221,7 +1216,7 @@ textarea::placeholder {
 /*=================================
 media query for hover effect in desktop starts here
 =================================*/
-@media only screen and (min-width: 995px) {
+@media only screen and (min-width: 996px) {
   .nav-item:hover {
     color: var(--primary-color);
     transition: all .5s;
@@ -1275,6 +1270,11 @@ media query for hover effect in desktop starts here
     transition: all .2s;
   }
 
+  .ceo-info-group:hover,
+  .info-group:hover {
+    background-position: left;
+  }
+
   .register-btn:hover,
   .buy-btn:hover {
     background-color: var(--primary-color);
@@ -1324,6 +1324,12 @@ media query for hover effect in desktop starts here
     transition: all .6s;
   }
 
+  .ceo-info-group .team-social,
+  .info-group .team-social {
+    opacity: 0;
+    transition: all .5s ease;
+  }
+
   .ceo-info-group:hover .team-social,
   .info-group:hover .team-social {
     opacity: 1;
@@ -1331,7 +1337,7 @@ media query for hover effect in desktop starts here
   }
 }
 /*=================================
-media query for hover effect in desktop starts here
+media query for hover effect in desktop ends here
 =================================*/
 /*=================================
 media query for 1280px starts here
@@ -1489,18 +1495,11 @@ media query for 995px starts here
   .ceo-info-group,
   .info-group {
     background-color: var(--primary-color);
-    color: var(--white-color);
   }
 
-  .ceo-info-group .ceo-designation,
-  .info-group .designation {
-    color: var(--white-color);
-  }
-
-  .ceo-info-group .team-social,
+  .ceo-info-group .social-ceo,
   .info-group .team-social {
-    opacity: 0;
-    transition: all .5s ease;
+    opacity: 1;
   }
 
   .input { flex-basis: 48.5%; }
@@ -1508,7 +1507,7 @@ media query for 995px starts here
   .input:nth-child(2) { margin: 0; }
 }
 /*=================================
-media query for 995px starts here
+media query for 995px ends here
 =================================*/
 /*=================================
 media query for 768px starts here
@@ -1551,6 +1550,11 @@ media query for 768px starts here
   .speaker-list {
     flex-direction: column;
     gap: 20px;
+  }
+
+  .ceo-info-group .team-social,
+  .info-group .team-social {
+    opacity: 1;
   }
 
   .become-content .heading { font-size: 30px; }
@@ -1645,6 +1649,10 @@ media query for 320px starts here
 @media only screen and (max-width:320px) {
   .heading { font-size: 30px; }
 
+  .brand-logo, .footer-logo {
+    flex-basis: 53%;
+  }
+
   .hero-heading,
   .year {
     font-size: 18px;
@@ -1677,3 +1685,19 @@ media query for 320px starts here
 /*=================================
 media query for 320px ends here
 =================================*/
+/* media query for between 996px and 1280px */
+@media screen and (min-width:996px) and (max-width:1280px) {
+  .speaker-info {
+    padding: 15px 0;
+    position: relative;
+  }
+
+  .ceo-info-group,
+  .info-group {
+    background-color: var(--primary-color);
+  }
+
+  .speaker-name { font-size: 17px; }
+  .designation { font-size: 9px; }
+}
+/* media query for between 996px and 1280px */
