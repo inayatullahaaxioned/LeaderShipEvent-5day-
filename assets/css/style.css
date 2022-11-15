@@ -219,7 +219,7 @@ li {
 .flex {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 .underline {
@@ -256,10 +256,17 @@ li {
 =================================*/
 .header {
   padding: 16px 0;
+  position: sticky;
+  z-index: 2;
+  top: 0;
   background-color: var(--navbar-bg-color);
 }
 
-.header .wrapper { margin-left: 12.5%; }
+.nav {
+  display: flex;
+  justify-content: space-between;
+  flex-basis: 66%;
+}
 
 .logo {
   display: inline-block;
@@ -268,7 +275,10 @@ li {
   text-transform: uppercase;
 }
 
-.brand-logo { flex-basis: 15%; }
+.brand-logo {
+  margin-right: 24%;
+  flex-basis: 15%;
+}
 
 .logo::before {
   content: "\f140";
@@ -281,18 +291,24 @@ li {
 }
 
 .nav-item {
+  margin: 0 15px;
   color: var(--white-color);
   font-size: 13px;
   font-weight: 600;
 }
 
 .nav-item.active { color: var(--primary-color); }
-.nav { flex-basis: 62.5%; }
+
+.header-btn {
+  margin-left:1.5%;
+}
 
 .custom-btn {
   padding: 12px 18px;
-  background-color: var(--secondary-color);
   border-radius: 25px;
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+  font-size: 13px;
   font-weight: 700;
 }
 
@@ -321,6 +337,7 @@ li {
   position: absolute;
   z-index: -1;
   top: 0;
+  left: 0;
   opacity: .8;
   object-fit: cover;
 }
@@ -336,7 +353,7 @@ li {
   right: 0;
   bottom: 0;
   left: 0;
-  background: linear-gradient(#2730531a 0%, #273053 100%) repeat scroll;
+  background: linear-gradient(#2730531a 0, #273053 100%) repeat scroll;
 }
 
 .hero-content {
@@ -364,7 +381,6 @@ li {
 }
 
 .next-section-btn {
-  margin-left: 1.5%;
   display: inline-block;
   text-indent: -9999px;
 }
@@ -396,15 +412,17 @@ li {
   background-color: var(--navbar-bg-color);
 }
 
+.highlight-list { justify-content: space-between; }
+
 .highlight-item img {
-  max-width: 344px;
-  max-height: 228px;
+  transition: all .6s;
 }
 
 .highlight-item {
   position: relative;
   overflow: hidden;
   flex-basis: 32%;
+  cursor: pointer;
 }
 
 .highlight-item figcaption {
@@ -455,7 +473,7 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(57, 63, 72, 0.7);
+  background-color: rgba(57, 63, 72, .7);
   z-index: 2;
 }
 
@@ -497,7 +515,7 @@ li {
 .story .heading { margin-bottom: 35px; }
 
 .left-heading {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 700;
   margin-bottom: 20px;
 }
@@ -508,26 +526,27 @@ li {
 }
 
 .avatar-img {
-  width: 40px;
-  height: 40px;
+  height: 100%;
   border: 1px solid var(--white-color);
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .story-box { align-items: initial; }
-.left-story { padding-right: 2%; }
+.left-story { margin-right: 2%; }
 
 .meet-btn,
 .schedule-btn {
   padding: 10px 17px;
   border-radius: 25px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
 }
 
 .meet-btn {
+  margin-right: 2%;
   border: 2px solid var(--primary-color);
-  margin-right: 1.8%;
+  color: var(--primary-color);
 }
 
 .schedule-btn {
@@ -538,12 +557,17 @@ li {
 
 .bold-para {
   margin-bottom: 48px;
-  font-size: 25px;
+  font-size: 23px;
   font-weight: 600;
   line-height: 33px;
 }
 
-.bottom-para { font-size: 14px; }
+.left-story .section-para { padding-right: 5%; }
+
+.bottom-para {
+  color: var(--p-color);
+  font-size: 14px;
+}
 
 .right-bottom-story {
   padding: 48px 0;
@@ -551,7 +575,15 @@ li {
   justify-content: initial;
 }
 
-.avatar-list figure { width: 36px; }
+.avatar-item {
+  width: 40px;
+  height: 40px;
+}
+
+.avatar-item:not(:first-child) {
+  position: relative;
+  right: 6px;
+}
 /*=================================
   story section styling ends here
 =================================*/
@@ -576,14 +608,14 @@ li {
 }
 
 .featured {
-  padding: 5px;
+  padding: 6px;
   border-radius: 4px;
   position: absolute;
   top: 8px;
   right: 1.5%;
   background-color: var(--secondary-color);
   color: var(--white-color);
-  font-size: 12px;
+  font-size: 10px;
   text-transform: uppercase;
 }
 
@@ -601,6 +633,18 @@ li {
   position: relative;
 }
 
+.ceo-info-group,
+.info-group {
+  background: linear-gradient(to left, #fff 50%, var(--primary-color) 50%) right;
+  background-size: 200%;
+  transition: all .5s ease;
+}
+
+.ceo-info-group:hover,
+.info-group:hover {
+  background-position: left;
+}
+
 .ceo-name {
   font-size: 21px;
   font-weight: 600;
@@ -613,9 +657,9 @@ li {
 }
 
 .team-social {
+  opacity: 0;
   position: absolute;
   right: 5px;
-  transition: all 3s;
 }
 
 .info-group .team-social li { margin: 0; }
@@ -648,11 +692,15 @@ li {
   left: 0;
   bottom: 0;
   background: var(--primary-color);
-  transition: all 1s;
+  transition: all .5s;
+}
+
+.speaker-list {
+  margin-top: 20px;
+  justify-content: space-between;
 }
 
 .speaker-list li {
-  margin-top: 20px;
   position: relative;
   flex-basis: 23.5%;
 }
@@ -678,12 +726,12 @@ li {
   font-family: "FontAwesome";
   float: left;
   text-indent: 0;
+  transition: all .3s;
 }
 
 .whatsapp::before { content: "\f232"; }
 .facebook::before { content: "\f09a"; }
 .google::before { content: "\f1a0"; }
-.team-social { display: none; }
 /*=================================
   speakers section styling ends here
 =================================*/
@@ -699,11 +747,16 @@ li {
 
 .schedule-date {
   padding: 22px;
+  border-left: 3px solid transparent;
   flex-basis: 25%;
+  cursor: pointer;
+}
+
+.schedule-date.active {
+  border-left: 3px solid var(--primary-color);
   box-shadow: 0 16px 48px rgb(0 0 0 / 18%);
 }
 
-.schedule-date.active { border-left: 3px solid var(--primary-color); }
 .schedule-date.active .day { color: var(--primary-color); }
 
 .day {
@@ -740,6 +793,7 @@ li {
 .clock,
 .sidebar {
   display: block;
+  color: #212529;
 }
 
 .clock::before,
@@ -759,6 +813,7 @@ li {
   height: 42px;
   margin-right: 15px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .meet-info .info-item {
@@ -766,6 +821,7 @@ li {
   justify-content: initial;
 }
 
+.meet-title a { color: var(--black-color); }
 .schedule-list { display: none; }
 .schedule-list.active { display: block; }
 
@@ -776,12 +832,13 @@ li {
 
 .meet-info { justify-content: flex-start; }
 
+.name { color: #212529; }
+
 .post {
   color: var(--p-color);
-  font-size: 13px;
+  font-size: 11px;
   text-transform: uppercase;
 }
-
 /*=================================
   schedule section styling ends here
 =================================*/
@@ -791,6 +848,9 @@ li {
 .become-speaker {
   padding: 105px 0;
   position: relative;
+  background: url(../images/terren-hurst-blgOFmPIlr0-unsplash.jpg) no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .become-speaker .heading,
@@ -827,7 +887,7 @@ li {
   padding: 10px 15px;
   border-radius: 20px;
   position: relative;
-  right: 11.8%;
+  left: 20%;
   background-color: var(--white-color);
   color: var(--black-color);
   font-size: 14px;
@@ -846,20 +906,26 @@ li {
   margin-bottom: 48px;
 }
 
+.ticket-list {
+  flex-wrap: wrap;
+}
+
 .name-price {
   padding: 16px 30px;
+  justify-content: space-between;
   background-color: var(--navbar-bg-color);
   color: var(--white-color);
   font-weight: 700;
 }
 
-.ticket-name { font-size: 28px; }
+.ticket-name { font-size: 24px; }
 .price { font-size: 20px; }
 
 .ticket-item {
+  margin: 0 1.85% 20px 0;
   border-radius: 20px;
   overflow: hidden;
-  flex-basis: 32%;
+  flex-basis: 31.45%;
   box-shadow: 0 16px 48px rgba(0, 0, 0, .175);
 }
 
@@ -868,6 +934,7 @@ li {
 .ticket-info {
   padding: 10px 0;
   color: var(--p-color);
+  font-size: 15px;
 }
 
 .ticket-icon::before {
@@ -912,7 +979,11 @@ li {
 }
 
 .venue .heading { margin-bottom: 50px; }
-iframe { margin-right: 20px; }
+
+iframe {
+  border-radius: 25px;
+  margin-right: 20px;
+}
 .venue-content { justify-content: initial; }
 
 .venue-detail {
@@ -926,11 +997,14 @@ iframe { margin-right: 20px; }
   padding: 22px 28px;
   background-color: var(--navbar-bg-color);
   color: var(--white-color);
-  font-size: 40px;
+  font-size: 37px;
   font-weight: 900;
 }
 
-.venue-box { padding: 35px 32px; }
+.venue-box {
+  padding: 35px 32px;
+  background-color: var(--section-bg-color);
+}
 .venue-box .icon { display: block; }
 
 .venue-box .icon::before {
@@ -988,15 +1062,23 @@ iframe { margin-right: 20px; }
 }
 
 .input-box { padding: 40px; }
+
 .input {
+  margin-right: 3%;
   flex-basis: 32%;
   position: relative;
+}
+
+.input:nth-child(3) {
+  margin-right: 0;
 }
 
 .error {
   position: absolute;
   bottom: 0;
   left: 0;
+  color: red;
+  font-size: 13px;
 }
 
 .input input,
@@ -1010,12 +1092,16 @@ textarea {
   outline: none;
 }
 
-textarea { width: 100%; }
+textarea {
+  margin-right: 0;
+  width: 100%;
+  resize: none;
+}
 
 .input input::placeholder,
 textarea::placeholder {
   color: var(--p-color);
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .submit-btn {
@@ -1023,14 +1109,14 @@ textarea::placeholder {
   padding: 11px 0;
   border: none;
   border-radius: 100px;
+  outline: none;
   background-color: var(--primary-color);
   color: var(--white-color);
-  outline: none;
+  font-size: 15px;
   font-size: 17px;
   font-weight: 700;
 }
 
-.error { color: red; }
 .success-msg { color: green; }
 /*=================================
   contact section styling ends here
@@ -1044,10 +1130,10 @@ textarea::placeholder {
 .upper-footer {
   padding: 35px 0 50px;
   border-bottom: 1px solid #dee2e6;
+  justify-content: space-between;
 }
 
 .footer-logo { flex-basis: 16%; }
-.social-list { gap: 30px; }
 
 .social-icon {
   display: inline-block;
@@ -1056,14 +1142,15 @@ textarea::placeholder {
 
 .social-icon::before {
   content: "\f09a";
-  width: 33px;
-  height: 33px;
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--black-color);
-  font-size: 20px;
+  font-size: 18px;
   font-family: "FontAwesome";
   float: left;
   text-indent: 0;
@@ -1074,15 +1161,23 @@ textarea::placeholder {
 .youtube::before { content: "\f167"; }
 
 .lower-footer {
-  padding: 28px 0;
+  padding: 50px 0 20px;
+  justify-content: space-between;
   color: var(--p-color);
   font-size: 13px;
 }
 
-.lower-footer a { color: var(--p-color); }
-.footer-menu { gap: 16px; }
-.copyright p { line-height: 26px; }
-.copyright-div { flex-basis: 37.5%; }
+.lower-footer a {
+  margin-right: 20px;
+  color: var(--p-color);
+  font-size: 14px;
+}
+
+.copyright p { line-height: 20px; }
+.copyright-div {
+  justify-content: space-between;
+  flex-basis: 37.5%;
+}
 
 
 .top-btn {
@@ -1144,8 +1239,8 @@ media query for hover effect in desktop starts here
   }
 
   .highlight-item:hover img {
-    transform: scale(1.3);
-    transition: all 2s;
+    transform: scale(1.2);
+    transition: all .6s;
   }
 
   .meet-btn:hover,
@@ -1153,6 +1248,14 @@ media query for hover effect in desktop starts here
     background-color: var(--primary-color);
     color: var(--white-color);
     transition: all .5s;
+  }
+
+  .social-ceo:hover::before,
+  .social-team:hover::before {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    transform: scale(.9);
+    transition: all .3s;
   }
 
   .schedule-date:hover {
@@ -1206,7 +1309,7 @@ media query for hover effect in desktop starts here
   .info-group:hover {
     background-color: var(--primary-color);
     color: var(--white-color);
-    transition: all 1s;
+    transition: all .3s;
   }
 
   .ceo-info-group:hover .ceo-designation,
@@ -1217,12 +1320,37 @@ media query for hover effect in desktop starts here
 
   .ceo-info-group:hover .team-social,
   .info-group:hover .team-social {
-    display: block;
-    transition: all 3s;
+    opacity: 1;
+    transition-delay: .5s;
   }
 }
 /*=================================
 media query for hover effect in desktop starts here
+=================================*/
+/*=================================
+media query for 1280px starts here
+=================================*/
+@media only screen and (max-width:1280px) {
+  .header .wrapper {
+    justify-content: space-between;
+  }
+
+  .brand-logo {
+    flex-basis: 18%;
+    margin-right: initial;
+  }
+
+  .header-btn { flex-basis: 16%; }
+
+  .meet-info .info-item {
+    justify-content: space-between;
+    flex-basis: 28%;
+  }
+
+  .ticket-info { font-size: 11px; }
+}
+/*=================================
+media query for 1280px ends here
 =================================*/
 /*=================================
 media query for 1024px starts here
@@ -1230,9 +1358,10 @@ media query for 1024px starts here
 @media only screen and (max-width:1024px) {
   .brand-logo,
   .footer-logo {
-    flex-basis: 20%;
+    flex-basis: 22%;
   }
 
+  .header-btn { flex-basis: 20%; }
   .meet-info .info-item { flex-basis: 32.7%; }
 
   .clock,
@@ -1285,13 +1414,8 @@ media query for 995px starts here
     transition: all .6s ease-out;
   }
 
-  .left-heading {
-    font-size: 25px;
-  }
-
-  .nav.active .nav-item {
-    font-size: 15px;
-  }
+  .left-heading { font-size: 25px; }
+  .nav.active .nav-item { font-size: 15px; }
 
   .nav {
     width: 100%;
@@ -1344,7 +1468,11 @@ media query for 995px starts here
   .speaker-list li { flex-basis: 46%; }
   .schedule-date { flex-basis: 50%; }
   .ticket-list { gap: 30px; }
-  .ticket-item { flex-basis: 46%; }
+
+  .ticket-item {
+    margin: 0 3.5% 20px 0;
+    flex-basis: 44%;
+  }
 
   .story,
   .speakers,
@@ -1365,8 +1493,13 @@ media query for 995px starts here
 
   .ceo-info-group .team-social,
   .info-group .team-social {
-    display: block;
+    opacity: 0;
+    transition: all .5s ease;
   }
+
+  .input { flex-basis: 48.5%; }
+
+  .input:nth-child(2) { margin: 0; }
 }
 /*=================================
 media query for 995px starts here
@@ -1386,9 +1519,10 @@ media query for 768px starts here
 
   .brand-logo,
   .footer-logo {
-    flex-basis: 34%;
+    flex-basis: 31%;
   }
 
+  .header-btn { flex-basis: 28%; }
   .lower-footer { gap: 20px; }
 
   .meet-item {
@@ -1408,6 +1542,11 @@ media query for 768px starts here
     gap: 20px;
   }
 
+  .speaker-list {
+    flex-direction: column;
+    gap: 20px;
+  }
+
   .become-content .heading { font-size: 30px; }
   .copyright-div { flex-basis: 50%; }
   .close-btn { right: 10%; }
@@ -1420,14 +1559,16 @@ media query for 768px ends here
 media query for 480px starts here
 =================================*/
 @media only screen and (max-width:480px) {
+  .heading { font-size: 28px; }
+
   .brand-logo,
   .footer-logo {
-    flex-basis: 53%;
+    flex-basis: 46%;
   }
 
   .hero-heading,
   .year {
-    font-size: 24px;
+    font-size: 23px;
     line-height: 25px;
   }
 
@@ -1436,6 +1577,7 @@ media query for 480px starts here
     flex-direction: column;
   }
 
+  .register-btn { left: 0; }
   .time-venue span { font-size: 12px; }
   .highlight-item { flex-basis: 100%; }
   .left-heading { font-size: 17px; }
@@ -1462,6 +1604,8 @@ media query for 480px starts here
     flex-basis: 100%;
   }
 
+  .ceo-image { width: 100%; }
+
   .schedule-date {
     padding: 12px 15px;
     flex-basis: 100%;
@@ -1469,9 +1613,13 @@ media query for 480px starts here
 
   .venue .heading,
   .contact-form .heading {
-    font-size: 30px;
+    font-size: 28px;
   }
 
+  .meet-info .info-item { justify-content: inherit; }
+  .venue-heading { font-size: 28px; }
+  .venue-box a { font-size: 18px; }
+  .address { font-size: 16px; }
   .venue-detail { flex-basis: 100%; }
   .contact { padding: 50px 0; }
   .contact-form { width: 100%; }
@@ -1480,6 +1628,7 @@ media query for 480px starts here
   .upper-footer { gap: 20px; }
   .footer-menu li { flex-basis: 45%; }
   .copyright-div { flex-basis: 86%; }
+  .ceo-info-group .facebook { display: none; }
 }
 /*=================================
 media query for 480px ends here
@@ -1512,6 +1661,7 @@ media query for 320px starts here
   .phone {
     font-size: 15px;
   }
+  
   .ceo-info-group .facebook { display: none; }
   .contact-form .heading { font-size: 25px; }
   .contact-form .heading { padding: 20px; }
