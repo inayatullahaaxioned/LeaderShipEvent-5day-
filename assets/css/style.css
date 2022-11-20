@@ -1,5 +1,5 @@
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
 /* ==========================================================================
    1. CSS Reset Code
    ========================================================================== */
@@ -202,7 +202,11 @@ li {
   max-width: 1360px;
   width: 79.31%;
   margin: 0 auto;
+  position: relative;
+  left: 6px;
 }
+
+html,body { overflow-x: hidden; }
 
 /* css reset  */
 *,
@@ -211,7 +215,7 @@ li {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -229,13 +233,13 @@ li {
 
 .heading {
   font-size: 38px;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .section-para {
   margin-bottom: 28px;
   color: var(--p-color);
-  font-size: 14px;
+  font-size: 15px;
   line-height: 22px;
 }
 
@@ -264,8 +268,7 @@ li {
 
 .nav {
   display: flex;
-  justify-content: space-between;
-  flex-basis: 66%;
+  flex-basis: 50%;
 }
 
 .logo {
@@ -275,10 +278,12 @@ li {
   text-transform: uppercase;
 }
 
-.brand-logo {
-  margin-right: 24%;
+.brand-logo,
+.ticket-btn {
   flex-basis: 15%;
 }
+
+.brand-logo { margin-right: 22%; }
 
 .logo::before {
   content: "\f140";
@@ -299,7 +304,7 @@ li {
 
 .nav-item.active { color: var(--primary-color); }
 
-.header-btn {
+.ticket-btn {
   margin-left:1.5%;
 }
 
@@ -343,7 +348,10 @@ li {
 }
 
 .hero-section { position: relative; }
-.hero-section .wrapper { width: 100%; }
+.hero-section .wrapper {
+  width: 100%;
+  text-align: center;
+}
 
 .hero-section::after {
   content: "";
@@ -357,14 +365,14 @@ li {
 }
 
 .hero-content {
-  padding: 15% 0 10%;
+  padding: 15% 27% 10%;
   flex-direction: column;
 }
 
 .hero-heading,
 .year {
   color: var(--white-color);
-  font-size: 48px;
+  font-size: 49px;
   font-weight: 900;
   text-transform: uppercase;
   display: inline-block;
@@ -372,12 +380,18 @@ li {
 
 .year { margin-bottom: 30px; }
 
-.time-venue span {
-  padding: 11px 16px;
+.time-venue span,
+.time-venue address {
+  padding: 10px 16px;
   display: inline-block;
   border: 1px solid var(--white-color);
   color: var(--white-color);
   font-size: 15px;
+}
+
+.time-venue address {
+  position: relative;
+  left: -5px;
 }
 
 .next-section-btn {
@@ -438,18 +452,14 @@ li {
   font-weight: 700;
 }
 
-.play-icon {
+.highlight-item::before {
+  content: "\f167";
+  display: none;
   position: absolute;
   z-index: 1;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-indent: -9999px;
-}
-
-.play-icon::before {
-  content: "\f167";
-  display: none;
   color: var(--highlight-icon-color);
   font-size: 60px;
   font-family: "FontAwesome";
@@ -457,7 +467,7 @@ li {
   text-indent: 0;
 }
 
-.highlight-item:hover .play-icon::before { display: block; }
+.highlight-item:hover::before { display: block; }
 
 .highlight-item:hover figcaption {
   display: none;
@@ -522,7 +532,7 @@ li {
 
 .avatar-list {
   display: flex;
-  margin-right: 5%;
+  margin-right: 4.55%;
 }
 
 .avatar-img {
@@ -535,9 +545,12 @@ li {
 .story-box { align-items: initial; }
 .left-story { margin-right: 2%; }
 
+.left-story,.right-story {
+  flex-basis: 50%;
+}
 .meet-btn,
 .schedule-btn {
-  padding: 10px 17px;
+  padding: 10px 21px;
   border-radius: 25px;
   font-size: 13px;
   font-weight: 600;
@@ -550,7 +563,6 @@ li {
 }
 
 .schedule-btn {
-  padding: 12px 15px;
   background-color: var(--navbar-bg-color);
   color: var(--white-color);
 }
@@ -564,14 +576,14 @@ li {
 
 .left-story .section-para { padding-right: 5%; }
 
-.bottom-para {
+.people-count {
   color: var(--p-color);
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .right-bottom-story {
   padding: 48px 0;
-  border-top: 1px solid var(--p-color);
+  border-top: 1px solid #dee2e6;
   justify-content: initial;
 }
 
@@ -602,8 +614,8 @@ li {
 
 .speaker-content .heading { margin-bottom: 23px; }
 
-.ceo-image,
-.ceo-image figure {
+.featured-image,
+.featured-image figure {
   position: relative;
 }
 
@@ -628,7 +640,7 @@ li {
 
 .ceo-info-group {
   width: 100%;
-  padding: 12px 5%;
+  padding: 12px 4%;
   background-color: var(--white-color);
   position: relative;
 }
@@ -641,13 +653,13 @@ li {
 }
 
 .ceo-name {
-  font-size: 21px;
+  font-size: 20px;
   font-weight: 600;
 }
 
 .ceo-designation {
   color: var(--p-color);
-  font-size: 13px;
+  font-size: 11px;
   text-transform: uppercase;
 }
 
@@ -693,6 +705,7 @@ li {
 .speaker-list {
   margin-top: 20px;
   justify-content: space-between;
+  gap: 20px;
 }
 
 .speaker-list li {
@@ -742,7 +755,7 @@ li {
 
 .schedule-date {
   padding: 22px;
-  border-left: 3px solid transparent;
+  border-left: 3px solid var(--section-bg-color);
   flex-basis: 25%;
   cursor: pointer;
 }
@@ -817,8 +830,8 @@ li {
 }
 
 .meet-title a { color: var(--black-color); }
-.schedule-list { display: none; }
-.schedule-list.active { display: block; }
+.meet-item { display: none; }
+.meet-item.active { display: flex; }
 
 .name-post {
   display: flex;
@@ -841,7 +854,7 @@ li {
   become speaker section styling starts here
 =================================*/
 .become-speaker {
-  padding: 105px 0;
+  padding: 100px 0;
   position: relative;
   background: url(../images/terren-hurst-blgOFmPIlr0-unsplash.jpg) no-repeat center;
   background-size: cover;
@@ -851,7 +864,6 @@ li {
 .become-speaker .heading,
 .become-para {
   color: var(--white-color);
-  font-weight: 600;
 }
 
 .become-para {
@@ -902,7 +914,14 @@ li {
 }
 
 .ticket-list {
+  align-items: inherit;
   flex-wrap: wrap;
+}
+
+.benifit-list {
+  padding-bottom: 22px;
+  display: flex;
+  flex-direction: column;
 }
 
 .name-price {
@@ -924,7 +943,9 @@ li {
   box-shadow: 0 16px 48px rgba(0, 0, 0, .175);
 }
 
-.ticket-feature { padding: 25px 30px; }
+.ticket-item:nth-child(3n) { margin-right: 0; }
+
+.ticket-feature { padding: 24px 30px; }
 
 .ticket-info {
   padding: 10px 0;
@@ -945,7 +966,6 @@ li {
 }
 
 .chat::before { content: "\f27a"; }
-.chat { margin-bottom: 23px; }
 .cash::before { content: "\f0d6"; }
 
 .top-border {
@@ -1056,7 +1076,7 @@ iframe {
   color: var(--white-color);
 }
 
-.input-box { padding: 40px; }
+.input-box { padding:48px 40px 40px; }
 
 .input {
   margin-right: 3%;
@@ -1114,7 +1134,6 @@ textarea::placeholder {
   background-color: var(--primary-color);
   color: var(--white-color);
   font-size: 15px;
-  font-size: 17px;
   font-weight: 700;
 }
 
@@ -1157,7 +1176,10 @@ textarea::placeholder {
   text-indent: 0;
 }
 
-.instagram::before { content: "\f16d"; }
+.instagram::before { 
+  content: "\f16d";
+  font-size: 20px;
+}
 .whatsapp::before { content: "\f232"; }
 .youtube::before { content: "\f167"; }
 
@@ -1169,7 +1191,7 @@ textarea::placeholder {
 }
 
 .lower-footer a {
-  margin-right: 20px;
+  margin-right: 32px;
   color: var(--p-color);
   font-size: 14px;
 }
@@ -1348,11 +1370,11 @@ media query for 1280px starts here
   }
 
   .brand-logo {
-    flex-basis: 18%;
+    flex-basis: 19.5%;
     margin-right: initial;
   }
 
-  .header-btn { flex-basis: 16%; }
+  .ticket-btn { flex-basis: 16%; }
 
   .meet-info .info-item {
     justify-content: space-between;
@@ -1368,12 +1390,15 @@ media query for 1280px ends here
 media query for 1024px starts here
 =================================*/
 @media only screen and (max-width:1024px) {
-  .brand-logo,
-  .footer-logo {
-    flex-basis: 22%;
+  .brand-logo {
+    flex-basis: 31%;
+  }
+  
+  .nav-item {
+    margin: 0 10px;
   }
 
-  .header-btn { flex-basis: 20%; }
+  .ticket-btn { flex-basis: 20%; }
   .meet-info .info-item { flex-basis: 32.7%; }
 
   .clock,
@@ -1401,7 +1426,9 @@ media query for 1024px starts here
 media query for 995px starts here
 =================================*/
 @media only screen and (max-width:995px) {
+  .brand-logo { flex-basis: 24%; }
   .wrapper { width: 82%; }
+  .hero-content { padding: 15% 14% 10%; }
 
   .hamburger.active .bar-two { display: none; }
 
@@ -1462,6 +1489,10 @@ media query for 995px starts here
     gap: 25px;
   }
 
+  .left-story, .right-story {
+    flex-basis: 100%;
+  }
+
   .meet-info .info-item { flex-basis: 45%; }
 
   .venue-content {
@@ -1477,7 +1508,7 @@ media query for 995px starts here
     bottom: 25px;
   }
 
-  .speaker-list li { flex-basis: 46%; }
+  .speaker-list li { flex-basis: 48%; }
   .schedule-date { flex-basis: 50%; }
   .ticket-list { gap: 30px; }
 
@@ -1503,8 +1534,9 @@ media query for 995px starts here
   }
 
   .input { flex-basis: 48.5%; }
-
   .input:nth-child(2) { margin: 0; }
+  iframe { width: 80%; }
+  .footer-menu { gap: 20px; }
 }
 /*=================================
 media query for 995px ends here
@@ -1518,7 +1550,10 @@ media query for 768px starts here
     font-size: 30px;
   }
 
-  .time-venue span { padding: 8px 12px; }
+  .time-venue span,
+  .time-venue address {
+    padding: 8px 12px;
+  }
 
   .highlight-item figcaption { font-size: 20px; }
 
@@ -1527,7 +1562,7 @@ media query for 768px starts here
     flex-basis: 31%;
   }
 
-  .header-btn { flex-basis: 28%; }
+  .ticket-btn { flex-basis: 28%; }
   .lower-footer { gap: 20px; }
 
   .meet-item {
@@ -1540,7 +1575,10 @@ media query for 768px starts here
   .ticket-item { width: 80%; }
   .ticket-info { font-size: inherit; }
   .become-speaker { padding: 40px 0; }
-  .register-btn { right: inherit; }
+  .register-btn {
+    right: inherit;
+    left: 0;
+  }
 
   .become-speaker .wrapper {
     flex-direction: column;
@@ -1587,6 +1625,7 @@ media query for 480px starts here
     flex-direction: column;
   }
 
+  .time-venue address { left: 0; }
   .register-btn { left: 0; }
   .time-venue span { font-size: 12px; }
   .highlight-item { flex-basis: 100%; }
@@ -1600,7 +1639,7 @@ media query for 480px starts here
 
   .meet-btn { padding: 10px 30px; }
   .bold-para { font-size: 22px; }
-  .bottom-para { margin-top: 15px; }
+  .people-count { margin-top: 15px; }
   .speaker-content { padding: inherit; }
   .schedule .heading { font-size: 30px; }
   .meet-info .info-item { flex-basis: 100%; }
@@ -1614,7 +1653,7 @@ media query for 480px starts here
     flex-basis: 100%;
   }
 
-  .ceo-image { width: 100%; }
+  .featured-image { width: 100%; }
 
   .schedule-date {
     padding: 12px 15px;
@@ -1663,7 +1702,6 @@ media query for 320px starts here
     margin-bottom: 30px;
   }
 
-  .hero-content { padding: 15% 0 11%; }
   .right-bottom-story { padding: 30px 0; }
   .ticket-feature { padding: 15px 20px; }
   .venue-heading { font-size: 30px; }
