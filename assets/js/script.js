@@ -26,21 +26,26 @@ scrollTop.addEventListener("click", function () {
 
 //tab filter in schedule section start
 let scheduleTab = document.querySelectorAll('.schedule-date'),
-  meetList = document.querySelectorAll('.schedule-list');
-console.log(scheduleTab);
-console.log(meetList);
+  meetList = document.querySelectorAll('.meet-item'),
+  alreadyActive = document.querySelectorAll('[data-item="one"]');
+//day one schedule active on page load
+  alreadyActive.forEach(function (dayOneList){
+    dayOneList.classList.add('active');
+  });
 scheduleTab[0].classList.add('active');
-meetList[0].classList.add('active');
 
 scheduleTab.forEach(function (day) {
   day.addEventListener('click', function () {
     let dayNo = this.getAttribute('data-day');
+    console.log(dayNo);
     showSchedule(day, dayNo);
   })
 })
 
 //function for showing schedule detail
 function showSchedule(day, dayNo) {
+  console.log(day);
+  console.log(dayNo);
   let activeTab = document.querySelector('.schedule-date.active');
   if (activeTab) {
     activeTab.classList.remove('active');
